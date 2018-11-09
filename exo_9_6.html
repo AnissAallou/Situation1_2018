@@ -1,0 +1,181 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 9.6</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 9.6">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_9_6_js() {
+
+	var x, y;
+	var i;
+	var sM;
+
+	var sUser = prompt("Rentrez une phrase pour la voir encodée :");
+	var split_sUser = sUser.split("");
+
+	for (i=0; i<sUser.length; i++) {
+		x = split_sUser[i].charCodeAt(0);
+		x++;
+		y = String.fromCharCode(x);
+		sM = sM + y;
+	}
+	alert(sM);
+
+
+
+
+}
+</script>
+
+<script>
+function Exo_9_6_jquery()
+{
+
+	var x, y;
+	var i;
+	var sM;
+
+	var sUser = prompt("Rentrez une phrase pour la voir encodée :");
+	var split_sUser = sUser.split("");
+
+	for (i=0; i<sUser.length; i++) {
+		x = split_sUser[i].charCodeAt(0);
+		x++;
+		y = String.fromCharCode(x);
+		sM = sM + y;
+	}
+	alert(sM);
+
+
+
+}
+
+
+
+
+</script>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 9.6</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:235px;">
+Un des plus anciens systèmes de cryptographie (aisément déchiffrable) consiste à décaler les lettres d’un message pour le rendre illisible. Ainsi, les A deviennent des B,<br>
+les B des C, etc. Ecrivez un algorithme qui demande une phrase à l’utilisateur et qui la code selon ce principe. Comme dans le cas précédent, le codage doit s’effectuer au niveau de la variable stockant la phrase, et pas seulement à l’écran.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:300px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_9_6
+
+Variables Bla, Cod, Alpha en Caractère
+Variables i, Pos en Entier
+
+DEBUT
+
+ECRIRE "Entrez la phrase à coder : "
+LIRE Bla
+
+Alpha ← "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+Cod ← ""
+
+POUR i allant de 1 à Len(Bla)
+  Let ← Mid(Bla, i, 1)
+  SI Let != "Z" ALORS
+    Pos ← Trouve(Alpha, Let)
+    Cod ← Cod & Mid(Alpha, Pos + 1, 1)
+  SINON
+    Cod ← Cod & "A"
+  FINSI
+i Suivant
+
+Bla ← Cod
+ECRIRE "La phrase codée est : ", Bla
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+
+function Exo_9_6_js() {
+
+	var x, y;
+	var i;
+	var sM;
+
+	var sUser = prompt("Rentrez une phrase pour la voir encodée :");
+	var split_sUser = sUser.split("");
+
+	for (i=0; i<sUser.length; i++) {
+		x = split_sUser[i].charCodeAt(0);
+		x++;
+		y = String.fromCharCode(x);
+		sM = sM + y;
+	}
+	alert(sM);
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_9_6_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Exo 3.5</title>
+		<meta charset="utf-8">
+		<meta name="description" content="Exercice 3.5">
+		<!-- For Internet Explhorreur : to force css3 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<!-- Tablettes 'n' Mobiles -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- main css and js -->
+		<link type="text/css" rel="stylesheet" href="algo.css">
+
+		<script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+		<!-- CODE JAVASCRIPT -->
+		<script type="text/javascript">
+            function Exo_3_5_js()  {
+
+                var iNb1, iNb2;
+                iNb1 = prompt("Saisir un nombre :");
+                iNb2 = prompt("Saisir un autre nombre :");
+                if ((iNb1 < 0) ^ (iNb2 < 0)){
+                    alert ("Le produit est négatif");
+                }else if ((iNb1 == 0) || (iNb2 == 0)){
+                    alert ("Le produit est nul");
+                } else {
+                    alert ("Le produit est positif");
+                }
+            }
+
+
+		</script>
+
+
+	</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+	<div id="page">
+		<!-- Entête de la zone considérée -->
+		<header>
+		<div class="center" style="margin-left:-200px;">
+			<h1>Mon super exo 3.5</h1>
+		</div>
+												<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:150px;">Énoncé : Ecrire un algorithme qui demande deux nombres à l’utilisateur et l’informe ensuite si le produit est négatif ou positif (on inclut cette fois le traitement du cas où le produit peut être nul). Attention toutefois, on ne doit pas calculer <br> le produit !</h1>
+		</div>
+		</header>
+
+		<!-- Nav. principale de la page -->
+
+		<!-- Les à-cotés de la page -->
+		<aside></aside>
+
+		<!-- Contenu textuel de la page -->
+		<section>
+			<div id="div_pseudo_code" style="margin-top:400px;" class="center">
+				<h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+				<textarea>
+Algorithme 3_5
+	Variables iNb1, iNb2 en numérique
+
+DEBUT
+	Ecrire " Saisir un nombre :"
+	Lire iNb1
+	Ecrire "Saisir un autre nombre :"
+	Lire iNb2
+	Si (iNb1<=0) xor (iNb2<=0) Alors
+	Ecrire "Le produit est négatif"
+    Sinon si (iNb1 ==0) || (iNb2 == 0) Alors
+    Ecrire "Le produit est nul"
+	Sinon écrire "Le produit est positif"
+FIN	
+				</textarea>
+			</div>
+			<div id="div_javascript" class="center">
+				<h1 style="margin-left:550px;">JavaScript</h1>
+				<textarea>
+function Exo_3_5_js()  {
+
+  var iNb1, iNb2;
+  iNb1 = prompt("Saisir un nombre :");
+  iNb2 = prompt("Saisir un autre nombre :");
+  if ((iNb1 <= 0) ^ (iNb2 <= 0)){
+    alert ("Le produit est négatif");
+  }else if ((iNb1 == 0) || (iNb2 == 0)){
+    alert ("Le produit est nul");
+  } else {
+    alert ("Le produit est positif");
+  }
+}
+
+				</textarea>
+				<div class="div_center">
+					<button class="btn_green" onClick="Exo_3_5_js()">Tester mon JS</button>
+				</div>
+			</div>
+
+		<div id="div_php" class="center">
+						<h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+< ? php
+
+if(isset($_POST["n1"]) && isset($_POST["n2"])) {
+$n1 = $_POST["n1"];
+$n2 = $_POST["n2"];
+	if (($_POST["n1"] > 0 && $_POST["n2"] > 0) || ($_POST["n1"] < 0 && $_POST["n2"] < 0)) {
+			$sMessage = "Leur produit est positif";
+		} else if (($_POST["n1"] > 0 && $_POST["n2"] < 0) || ($_POST["n1"] < 0 && $_POST["n2"] > 0)) {
+			$sMessage = "Leur produit est négatif";
+		} else {
+			$sMessage = "Leur produit est nul";
+		}
+	
+}
+
+require "exo_3_5.html";
+
+? >
+				</textarea>
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_3_5.php">
+				
+				
+					<h4>Entrez un premier nombre :</h4>
+					<input type="text" name="n1" id="n1" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Entrez un second nombre :</h4>
+					<input type="text" name="n2" id="n2" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+				
+			
+
+				
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+		</section>
+
+		<!-- Pied-de-page de la page -->
+		<footer></footer>
+	</div>
+
+</body>
+</html>
+

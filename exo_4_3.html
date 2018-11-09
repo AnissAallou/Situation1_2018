@@ -1,0 +1,265 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 4.3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 4.3">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script type="text/javascript">
+function Exo_4_3_js() {
+
+  var hour, min, sec;
+
+	alert("Entrez les heures, puis les minutes, puis les secondes :");
+	hour = prompt("Entrez l'heure :");
+	min = prompt("Entrez les minutes :");
+	sec = prompt("et les secondes : ");
+
+	sec++;
+
+	if (sec==60) {
+		sec=0;
+		min++;
+	}
+	if (min==60) {
+		min = 0;
+		hour++;
+	}
+	if (hour==24) {
+
+		hour=0;
+	}
+
+
+
+
+	alert("Dans une minute il sera " + hour + " heure(s) " + min + " minute(s) " + sec + " seconde(s)");
+
+
+
+
+
+}
+</script>
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 4.3</h1>
+		</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:330px;">Énoncé : De même que le précédent, cet algorithme doit demander une heure et en afficher une autre. Mais cette fois, il doit gérer également les secondes, et afficher l'heure qu'il sera une seconde plus tard.<br><br>
+			Par exemple, si l'utilisateur tape 21, puis 32, puis 8, l'algorithme doit répondre : "Dans une seconde, il sera<br> 21 heure(s), 32 minute(s) et 9 seconde(s)".<br><br>
+			NB : là encore, on suppose que l'utilisateur entre une<br> date valide.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+Algorithme_Exercice_4_3
+
+
+Variables hour, min, sec en Numérique
+
+DEBUT
+
+	ECRIRE "Entrez les heures, puis les minutes, puis les secondes :"
+
+	ECRIRE "Entrez l'heure : "
+	LIRE hour
+
+  	ECRIRE "Entrez les minutes : "
+		LIRE min
+
+	ECRIRE "Entrez les secondes : "
+	LIRE sec
+
+	sec++
+
+	SI sec == 60 ALORS
+		sec <- 0
+		min++
+	FINSI
+
+	SI min == 60 ALORS
+		min <- 0
+		hour++
+	FINSI
+
+	SI hour == 24 ALORS
+		hour <- 0
+	FINSI
+
+	ECRIRE "Dans une minute il sera ", hour, "heure(s) ", min, "minute(s)", sec, "seconde(s)"
+
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_4_3_js() {
+
+  var hour, min, sec;
+
+	alert("Entrez les heures, puis les minutes, puis les secondes :");
+	hour = prompt("Entrez l'heure : ");
+	min = prompt("Entrez les minutes : ");
+	sec = prompt("et les secondes : ");
+
+	sec++;
+
+	if (sec==60) {
+		sec=0;
+		min++;
+	}
+	if (min==60) {
+		min = 0;
+		hour++;
+	}
+	if (hour==24) {
+
+		hour=0;
+	}
+
+
+	alert("Dans une minute il sera " + hour + " heure(s) " + min + " minute(s) " + sec + " seconde(s)");
+
+
+}
+
+
+
+function_exo_4_3() {
+
+	var iHeure=+ prompt("Quelle heure ?");
+	var iMinute=+ prompt("Quelle minute ?");
+	var iSeconde=+ prompt("Quelle seconde ?");
+
+	iSeconde++;
+	iMinute++;
+	(iHeure < 10) ? iHeure= "0" + iHeure : "";
+	(iMinute < 10) ? iMinute= "0" + iMinute : "";
+	(iSeconde < 10) ? Seconde = "0" + iSeconde : "";
+
+	(iMinute == 60) ? iMinute= "00" : "";
+	(iSeconde == 60) ? iSeconde= "00" : "";
+	(iMinute == "00") ? iHeure++ : "";
+
+
+	(iHeure == "24") ? iHeure= "00" : "";
+
+	alert("Il sera : " + iHeure + "h" + iMinute);
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_4_3_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+			 <div id="div_php" class="center">
+                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+	$hour = $_POST["hour"];
+	$min = $_POST["min"];
+	$sec = $_POST["sec"];
+
+	$sec++;
+
+	if ($sec == 60){
+		$sec = 0;
+		$min++;
+		if($min == 60){
+			$min = 0;
+			$hour++;
+
+			if($hour == 24){
+				$hour = 0;
+			}
+		}
+	}
+
+	require "exo_4_3.html";
+
+? >
+
+
+
+
+
+				</textarea>
+            <form name="MyExoForm" id="MyExoForm" method="POST" action="exo_4_3.php">
+                <div class="center">
+                <h1>Entrez l'heure :</h1>
+				</div>
+                    <input type="text" name="hour" value="" style="margin-left:765px;">
+
+                <div class="center">
+                <h1>les minutes :</h1>
+				</div><br>
+                    <input type="text" name="min" value="" style="margin-left:765px;">
+
+				<div class="center">
+                <h1>et les secondes :</h1>
+				</div><br>
+                    <input type="text" name="sec" value="" style="margin-left:765px;"><br><br>
+
+                <button type="submit" style="margin-left:815px;">PHP</button>
+
+                 <div class="center">
+                <h1><?php echo "Dans une minute, il sera " . '</br>' . $hour . " heures et " . $min . " minutes et " . '</br>' .$sec. " secondes."; ?></h1>
+				</div>
+            </form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

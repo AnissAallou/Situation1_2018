@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.7</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.7">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 10.7</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:480px; height:150px;">
+Soient Toto.txt et Tata.txt deux fichiers dont<br> les enregistrements ont la même structure.<br>
+ Ecrire un algorithme qui recopie tout le fichier<br> Toto dans le fichier Tutu, puis à sa suite, tout<br> le fichier Tata (concaténation de fichiers).
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_10_7
+
+Variable Lig en Caractère
+DEBUT
+Ouvrir "Tutu.txt" sur 1 pour Ajout
+Ouvrir “Toto.txt” sur 2 pour Lecture
+TANTQUE Non EOF(2)
+  LireFichier 2, Lig
+  EcrireFichier 1, Lig
+FINTANTQUE
+Fermer 2
+Ouvrir “Tata.txt” sur 3 pour Lecture
+FINTANTQUE Non EOF(3)
+  LireFichier 3, Lig
+  EcrireFichier 1, Lig
+FINTANTQUE
+Fermer 3
+Fermer 1
+FIN
+
+				</textarea>
+            </div>
+
+
+      <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+if(isset($_POST['exec'])) {
+$sToto ="";
+$sTata ="";
+$sTutu ="";
+///////////////////////////////
+$handle = fopen("Toto.txt","r");
+while (!feof($handle)) {
+	$sToto .=fgets($handle);
+}
+fclose($handle);
+///////////////////////////////
+$handle = fopen("Tutu.txt", "r+");
+fwrite($handle, $sToto);
+fclose($handle);
+$sTemp = "";
+///////////////////////////////
+$handle = fopen("Tata.txt","r");
+while (!feof($handle)) {
+	$sTata .= fgets($handle);
+}
+fclose($handle);
+//////////////////////////////
+$handle = fopen("Tutu.txt", "a+");
+fwrite($handle, $sTata);
+fclose($handle);
+//////////////////////////////
+$handle = fopen("Tutu.txt", "r");
+while (!feof($handle)) {
+	$sTutu .=fgets($handle);
+}
+fclose($handle);
+$sTutu = $sToto . $sTata;
+$sMessage = "<br/>Le fichier concatenÃ© Tutu.txt est " .$sTutu;
+}
+
+require "exo_10_7.html";
+
+? >
+
+				</textarea>
+
+
+
+
+				<form name="fusion" id="fusion" method="post" action="exo_10_7.php">
+							<div class="center" style="margin-left:-100px;">
+            <h1><span><?= $sMessage; ?></span></h1>
+			</div>
+					<button class='btn_green' type="submit">Fusion des 2 fichiers</button>
+					<input type="hidden" name="exec" id="exec" value=" ">
+				</form>
+	<div>
+	<div class="center" style="margin-left:-100px;">
+
+				<br>
+				<br>
+				<big>
+					<h1><u>Fichier Toto.txt</u>
+					<br>
+					</big>
+					Marco le Phénix
+					<br>
+					marco@hotmail.fr
+					<br>
+					<br>
+					Portgas D. Ace
+					<br>
+					portgas.ace@mail.com
+					<br>
+					<br>
+					Jozu
+					<br>
+					jozu.fake.mail
+					<br>
+					<br>
+					<big>
+						<u>Fichier Tata.txt</u>
+						<br>
+					</big>
+					Shanks
+					<br>
+					shanks@fausse.com
+					<br>
+					<br>
+					Edward Newgate
+					<br>
+					newgate@gmail.com
+					<br>
+					<br>
+					Jozu
+					<br>
+					jozu.mail.test
+					<br>
+					<br>
+
+
+
+					</div>
+				</div>
+			    </div>
+
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 5.3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 5.3">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="../css/algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+<?php 
+function Exo_5_3_php() {
+
+	
+	$n = "Entrez un nombre :";
+	$i = 0;
+	echo "Les 10 nombres suivants sont : ";
+	
+	while ($i < 10) {
+		$i = $i + 1;
+		echo $n + $i; 	
+	} 
+	
+   
+
+}
+?>
+<script>
+function Exo_5_3_js() {
+
+	
+	var n =+ prompt("Entrez un nombre :");
+	var i = 0;
+	alert("Les 10 nombres suivants sont : ");
+	
+	while (i < 10) {
+		i = i + 1;
+		alert(n + i); 	
+	} 
+
+
+}
+</script>
+
+<script>
+function Exo_5_3_jquery() {
+
+    var n =+ prompt("Entrez un nombre :");
+	var i = 0;
+	alert("Les 10 nombres suivants sont : ");
+	
+	while (i < 10) {
+		i = i + 1;
+		alert(n + i); 	
+	} 
+
+
+}
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+            <h1>Mon super exo 5.3</h1>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code">
+                <h2>PSEUDO-CODE</h2>
+                <textarea>
+                    					
+Algorithme_Exercice_5_3                    
+                    
+Variables n, i numérique
+
+DEBUT
+
+	ECRIRE "Entrez un nombre :"
+	LIRE n
+	
+	i = 0;
+	
+	ECRIRE "Les 10 nombres suivants sont :"
+	
+	TANTQUE i < 10 FAIRE
+		i = i + 1
+		ECRIRE n + i	
+	FINTANTQUE
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript">
+                <h2>JavaScript</h2>
+                <textarea>
+				
+function Exo_5_3_js() {
+
+	
+	var n =+ prompt("Entrez un nombre :");
+	var i = 0;
+	alert("Les 10 nombres suivants sont : ");
+	
+	while (i < 10) {
+		i = i + 1;
+		alert(n + i); 	
+	} 
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_3_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php">
+                <h2>JQuery</h2>
+                <textarea>
+
+function Exo_5_3_jquery() {
+
+	
+	var n =+ prompt("Entrez un nombre :");
+	var i = 0;
+	alert("Les 10 nombres suivants sont : ");
+	
+	while (i < 10) {
+		i = i + 1;
+		alert(n + i); 	
+	} 
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_3_jquery()">Tester mon JQuery</button>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

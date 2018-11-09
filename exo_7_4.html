@@ -1,0 +1,227 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 7.4</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 7.4">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+	<style>
+	table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td
+{
+    border: 1px solid cyan;
+}
+</style>
+
+</head>
+
+<body>
+
+<script>
+function Exo_7_4_js() {
+
+
+	var tab = [12,8,4,45,64,9,2];
+	var i;
+	var n;
+
+
+var n =+ prompt("tab = [12,8,4,45,64,9,2]\nCase du tableau a supprimer :");
+tab.splice(n, 1);
+
+
+
+ alert("tab = [12,8,4,45,64,9,2]\n tab = "+ tab);
+
+
+
+	}
+
+
+</script>
+
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 7.4</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:430px;">Ecrivez un algorithme qui permette à l’utilisateur de supprimer une
+			valeur d’un tableau préalablement saisi. L’utilisateur donnera l’indice de la valeur qu’il souhaite supprimer. Attention, il ne s’agit pas de remettre une<br>
+			valeur à zéro, mais bel et bien de la supprimer du<br> tableau lui-même ! Si le tableau de départ était :<br><br>
+<table>
+<tr>
+	<td>12</td>
+	<td>8</td>
+	<td>4</td>
+	<td>45</td>
+	<td>64</td>
+	<td>9</td>
+	<td>2</td>
+</tr>
+</table>
+<br><br>
+Et que l’utilisateur souhaite supprimer la valeur d’indice 4, le nouveau tableau sera :
+<br><br>
+<table>
+<tr>
+	<td>12</td>
+	<td>8</td>
+	<td>4</td>
+	<td>45</td>
+	<td>9</td>
+	<td>2</td>
+</tr>
+</table>
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:500px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_7_4
+
+Variables i, n, Tableau tab numérique
+
+DEBUT
+
+	tab <- (12,8,4,45,64,9,2)
+
+	ECRIRE "tab = [12,8,4,45,64,9,2]"
+	ECRIRE "Case du tableau a supprimer : "
+	LIRE n
+	tab.splice(n, 1)
+
+
+
+	ECRIRE "tab = [12,8,4,45,64,9,2]"
+	ECRIRE "tab = ", tab
+
+
+
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_7_4_js() {
+
+
+	var tab = [12,8,4,45,64,9,2];
+	var i;
+	var n;
+
+
+var n =+ prompt("tab = [12,8,4,45,64,9,2]\nCase du tableau a supprimer :");
+tab.splice(n, 1);
+
+
+
+ alert("tab = [12,8,4,45,64,9,2]\n tab = "+ tab);
+
+
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_7_4_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+       <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+   $tab = [12, 8, 4, 45, 64, 9, 2];
+    $nombre = $_POST['iReponseUser'];
+    array_splice($tab,$nombre,1);
+
+    $sMessage= implode(" , ", $tab);
+
+
+   require "exo_7_4.html";
+
+? >
+
+
+
+
+
+				</textarea>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_7_4.php">
+
+			<div class="center" style="margin-left:-100px;">
+            <div class="message">
+
+
+                <h1 style="margin-left:615px; width:250px;">le tableau : [12, 8, 4, 45, 64, 9, 2] </h1>
+
+
+            </div>
+			</div>
+
+
+
+            <input type="text" name="iReponseUser" id="iReponseUser" value="" size="10" maxlength="10" style="margin-left:537px;">
+            <input type="hidden" name="tab" id="tab" value="" size="3" maxlength="3">
+            <input type="hidden" name="nombre" id="nombre" value="" size="3" maxlength="3">
+
+
+            <button type="submit">php</button>
+
+			<div class="center" style="margin-left:-100px;">
+            <h1 style="margin-left:615px;"><span> <?= $sMessage; ?>  </span></h1>
+			</div>
+
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.4</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.4">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_10_4_js() {
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+
+var Nouveau.Nom = prompt("Entrez le nom : ");
+var Nouveau.Prénom = prompt("Entrez le prénom : ");
+var Nouveau.Tel = prompt("Entrez le téléphone : ");
+var Nouveau.Mail = prompt("Entrez le mail : ");
+
+window.open("Adresse.txt", 1);
+var i = -1;
+var insert = false;
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Insert = true;
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes[i] = MonPote;
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+for(j=0; j<=i; j++) {
+  EcrireFichier 1, MesPotes[j];
+  }
+close(1);
+
+
+
+}
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 10.4</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:540px; height:90px;">
+Même question, mais cette fois le carnet est supposé<br> être trié par ordre alphabétique. L’individu doit donc<br> être inséré au bon endroit dans le fichier.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:100px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_10_4
+
+Variables nom, prenom, tel, mail, lig en Caractère
+
+Structure Bottin
+  nom en Caractère * 20
+  prenom en Caractère * 15
+  tel en Caractère * 10
+  mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+DEBUT
+ECRIRE "Entrez le nom : "
+LIRE Nouveau.Nom
+ECRIRE "Entrez le prénom : "
+LIRE Nouveau.Prénom
+ECRIRE "Entrez le téléphone : "
+LIRE Nouveau.Tel
+ECRIRE "Entrez le mail : "
+LIRE Nouveau.Mail
+
+Ouvrir "Adresse.txt" sur 1 pour Lecture
+i ← -1
+inséré ← Faux
+TANTQUE Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré ALORS
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+    i ← i + 1
+    Redim MesPotes(i)
+  FINSI
+  MesPotes(i) ← MonPote
+FINTANTQUE
+Fermer 1
+SI Non Inséré ALORS
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FINSI
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+POUR j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j Suivant
+Fermer 1
+FIN
+
+FIN
+
+				</textarea>
+            </div>
+      
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

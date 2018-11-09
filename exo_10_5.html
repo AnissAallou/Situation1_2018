@@ -1,0 +1,127 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.5</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.5">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 10.5</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:540px; height:210px;">
+Ecrivez un algorithme qui permette de modifier un renseignement (pour simplifier, disons uniquement<br>
+le nom de famille) d’un membre du carnet d’adresses.<br>
+Il faut donc demander à l’utilisateur quel est le nom à modifier, puis quel est le nouveau nom, et mettre à jour le fichier. Si le nom recherché n'existe pas, le programme devra le signaler.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_10_5
+
+Structure Bottin
+  nom en Caractère * 20
+  prenom en Caractère * 15
+  tel en caractère * 10
+  mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote en Bottin
+Variables Ancien, Nouveau en Caractère*20
+Variables i, j en Numérique
+Variable Trouvé en Booléen
+DEBUT
+ECRIRE "Entrez le nom à modifier : "
+LIRE Ancien
+ECRIRE "Entrez le nouveau nom : "
+LIRE Nouveau
+
+Ouvrir “Adresse.txt” sur 1 pour Lecture
+i ← -1
+Trouvé ← Faux
+TANNTQUE Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  SI MonPote.Nom = Ancien.Nom ALORS
+    Trouvé ← Vrai
+    MonPote.Nom ← Nouveau
+  FINSI
+  MesPotes(i) ← MonPote
+FINTANTQUE
+Fermer 1
+
+Ouvrir "Adresse.txt" sur 1 pour Ecriture
+POUR j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j Suivant
+Fermer 1
+
+SI Trouvé ALORS
+  ECRIRE "Modification effectuée"
+SINON
+  ECRIRE "Nom inconnu. Aucune modification effectuée"
+FINSI
+FIN
+
+				</textarea>
+            </div>
+
+
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

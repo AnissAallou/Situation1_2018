@@ -1,0 +1,116 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.6</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.6">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 10.6</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:540px; height:65px;">
+Ecrivez un algorithme qui trie les individus du carnet d’adresses par ordre alphabétique.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:100px;" class="center">
+                <h2 style="margin-left:500px;">PSEUDO-CODE</h2>
+                <textarea>
+
+
+
+Algorithme_Exercice_10_6
+
+Structure Bottin Nom en Caractère * 20
+Prenom en Caractère * 15
+Tel en caractère * 10
+Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables Mini en Bottin
+Variables i, j en Numérique
+DEBUT
+Ouvrir "Adresse.txt" sur 1 pour Lecture
+i ← -1
+TANTQUE Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MesPotes(i)
+FinTantQue
+Fermer 1
+POUR j ← 0 à i - 1
+  Mini ← MesPotes(j)
+  posmini ← j
+  POUR k ← j + 1 à i
+    SI MesPotes(k).Nom < Mini.Nom Alors
+      mini ← MesPotes(k)
+      posmini ← k
+    FINSI
+  k Suivant
+  MesPotes(posmini) ← MesPotes(j)
+  MesPotes(j) ← Mini
+j Suivant
+Ouvrir "Adresse.txt" sur 1 pour Ecriture
+POUR j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j Suivant
+Fermer 1
+FIN
+
+				</textarea>
+            </div>
+
+
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

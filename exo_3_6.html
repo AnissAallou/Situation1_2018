@@ -1,0 +1,188 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 3.6</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 3.6">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+function Exo_3_6_js() {
+
+  var age;
+
+	age = prompt("Entrez l’âge de l’enfant :");
+
+	if (age>=12) {
+		alert("Catégorie Cadet");
+	} else if (age>=10) {
+		alert("Catégorie Minime");
+	} else if (age>=8){
+		alert("Catégorie Pupille");
+	} else if (age>=6){
+		alert("Catégorie Poussin");
+	}
+
+
+
+
+}
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 3.6</h1>
+			</div>
+        <div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:240px;">Énoncé : Ecrire un algorithme qui demande l’âge d’un enfant à l’utilisateur. Ensuite, il l’informe de sa catégorie : <br>
+			•"Poussin" de 6 à 7 ans<br>
+			•"Pupille" de 8 à 9 ans<br>
+			•"Minime" de 10 à 11 ans<br>
+			•"Cadet" après 12 ans<br>
+			Peut-on concevoir plusieurs algorithmes équivalents menant à ce résultat ?</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_3_6
+
+
+Variable age en Numérique
+
+DEBUT
+
+	ECRIRE "Entrez l’âge de l’enfant : "
+	LIRE age
+
+	SI age >= 12 ALORS
+		ECRIRE "Catégorie Cadet"
+	FINSI
+
+	SINON SI age >= 10 ALORS
+		ECRIRE "Catégorie Minime"
+	FINSI
+
+	SINON SI age >= 8 ALORS
+		ECRIRE "Catégorie Pupille"
+	FINSI
+
+	SINON SI age >= 6 ALORS
+		ECRIRE "Catégorie Poussin"
+	FINSI
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_3_6_js() {
+
+  var age;
+
+	age = prompt("Entrez l’âge de l’enfant :");
+
+	if (age>=12) {
+		alert("Catégorie Cadet");
+	} else if (age>=10) {
+		alert("Catégorie Minime");
+	} else if (age>=8){
+		alert("Catégorie Pupille");
+	} else if (age>=6){
+		alert("Catégorie Poussin");
+	}
+
+
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_3_6_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+		<div id="div_php" class="center">
+						<h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+< ? php
+
+if(isset($_POST["age"])) {
+$age = $_POST["age"];
+	if ($_POST["age"] >= 12) {
+			$sMessage = "Catégorie Cadet";
+		} else if ($_POST["age"] >= 10) {
+			$sMessage = "Catégorie Minime";
+		} else if ($_POST["age"] >= 8) {
+			$sMessage = "Catégorie Pupille";
+		} else if ($_POST["age"] >= 6) {
+			$sMessage = "Catégorie Poussin";
+		}
+}
+
+require "exo_3_6.html";
+
+? >
+				</textarea>
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_3_6.php">
+
+
+					<h4>Entrez l'âge de l'enfant :</h4>
+					<input type="text" name="age" id="age" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+
+
+
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

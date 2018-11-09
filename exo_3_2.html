@@ -1,0 +1,169 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 3.2</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 3.2">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script>
+function Exo_3_2_js() {
+
+  var n1, n2;
+
+	n1 = prompt("Saisissez le premier nombre : ");
+	n2 = prompt("Saisissez le second nombre : ");
+
+	if ((n1>0 && n2>0) || (n1<0 && n2<0)) {
+	alert("Leur produit est positif");
+	} else {
+	alert("Leur produit est négatif");
+	}
+
+
+}
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 3.2</h1>
+		</div>
+						<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:150px;">Énoncé : Ecrire un algorithme qui demande deux nombres<br> à l’utilisateur et l’informe ensuite si leur produit est négatif ou positif (on laisse de côté le cas où le produit est nul). Attention toutefois : on ne doit pas calculer le produit des deux nombres.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+Algorithme_Exercice_3_2
+
+
+Variables n1, n2 en Numérique
+
+DEBUT
+
+	ECRIRE "Saisissez le premier nombre : "
+	LIRE n1
+
+	ECRIRE "Saisissez le second nombre : "
+	LIRE n2
+
+	SI (n1 > 0 ET n2 > 0) OU (n1 < 0 ET n2 < 0) ALORS
+  		ECRIRE "Leur produit est positif"
+	SINON
+  		ECRIRE "Leur produit est négatif"
+
+	FINSI
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_3_2_js() {
+
+  var n1, n2;
+
+	n1 = prompt("Saisissez le premier nombre:");
+	n2 = prompt("Saisissez le second nombre:");
+
+	if ((n1>0 && n2>0) || (n1<0 && n2<0)) {
+	alert("Leur produit est positif");
+	} else {
+	alert("Leur produit est négatif");
+	}
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_3_2_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+
+		<div id="div_php" class="center">
+<h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+< ? php
+
+if(isset($_POST["n1"]) && isset($_POST["n2"])) {
+$n1 = $_POST["n1"];
+$n2 = $_POST["n2"];
+	if (($_POST["n1"] > 0 && $_POST["n2"] > 0) || ($_POST["n1"] < 0 && $_POST["n2"] < 0)) {
+			$sMessage = "Leur produit est positif";
+		} else {
+			$sMessage = "Leur produit est négatif";
+		}
+
+}
+
+require "exo_3_2.html";
+
+? >
+				</textarea>
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_3_2.php">
+
+
+					<h4>Saisissez le premier nombre :</h4>
+					<input type="text" name="n1" id="n1" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Saisissez le second nombre :</h4>
+					<input type="text" name="n2" id="n2" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+
+
+
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.3">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_10_3_js() {
+
+var nom;
+var prenom;
+var tel;
+var mail;
+var lig;
+
+nom = prompt("Entrez le nom : ");
+prenom = prompt("Entrez le prénom : ");
+tel = prompt("Entrez le téléphone : ");
+mail = prompt("Entrez le nom : ");
+
+lig = nom && prenom && tel && mail;
+window.open("adresse.txt", 1);
+alert(1 + " " + lig);
+window.open(1);
+
+
+
+}
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 10.3</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:180px;">
+On travaille avec le fichier du carnet d’adresses en champs de largeur fixe.<br><br>
+Ecrivez un algorithme qui permet à l’utilisateur de saisir au clavier un nouvel individu qui sera ajouté à ce carnet d’adresses.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_10_3
+
+Variables nom, prenom, tel, mail, lig Alphanumérique
+
+DEBUT
+ECRIRE "Entrez le nom : "
+LIRE nom
+ECRIRE "Entrez le prénom : "
+LIRE prenom
+ECRIRE "Entrez le téléphone : "
+LIRE tel
+ECRIRE "Entrez le nom : "
+Lire mail
+lig ← Nom & Prénom & Tel & mail
+Ouvrir "Adresse.txt" sur 1 pour Ajout
+EcrireFichier 1, lig
+Fermer 1
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+
+function Exo_10_3_js() {
+
+var nom;
+var prenom;
+var tel;
+var mail;
+var lig;
+
+nom = prompt("Entrez le nom : ");
+prenom = prompt("Entrez le prénom : ");
+tel = prompt("Entrez le téléphone : ");
+mail = prompt("Entrez le nom : ");
+
+lig = nom && prenom && tel && mail;
+window.open("adresse.txt", 1);
+alert(1 + " " + lig);
+window.open(1);
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_3_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+
+
+
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

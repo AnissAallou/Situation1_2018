@@ -1,0 +1,256 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 4.3.bis</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 4.3.bis">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+
+<script type="text/javascript">
+function Exo_4_3_bis_js() {
+
+  var jour, mois, annee;
+
+	alert("Entrez le jour, puis le mois, puis l'année :");
+	jour = prompt("Entrez le jour :");
+	mois = prompt("Entrez le mois :");
+	annee = prompt("Entrez l'année :");
+
+	jour++;
+
+	if (jour > 30) {
+			jour = 1;
+			mois++;
+	}
+
+	if (mois > 12) {
+		mois = 1;
+		annee++;
+	}
+
+	if (jour > 28 && mois == 2) {
+	 jour = 1;
+	 mois++;
+	}
+
+	alert("Demain on sera le " + jour + " / " + mois + " / " + annee);
+
+}
+
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1 style="width:230px;">Mon super exo 4.3.bis</h1>
+		</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:60px;">Énoncé : De même que le précédent, cet algorithme doit demander après le jour et le mois, l’année.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_4_3_bis
+
+Variables jour, mois, annee en Numérique
+
+DEBUT
+
+	ECRIRE "Entrez le jour, puis le mois, puis l'année : "
+
+	ECRIRE "Entrez le jour :"
+	LIRE jour
+
+	ECRIRE "Entrez le mois :"
+	LIRE mois
+
+	"Entrez l'annee :"
+	LIRE annee
+
+	jour++
+
+	SI jour > 30 ALORS
+		jour <- 1
+		mois++
+	FINSI
+
+	SI mois > 12 ALORS
+		mois <- 1
+		annee++
+	FINSI
+
+	SI jour > 28 ET mois == 2 ALORS
+	 jour <- 1
+	 mois++
+	FINSI
+
+	ECRIRE "Demain on sera le ", jour, " / ", mois, " / ", annee
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_4_3_bis_js() {
+
+  var jour, mois, annee;
+
+	alert("Entrez le jour, puis le mois, puis l'année :");
+	jour = prompt("Entrez le jour :");
+	mois = prompt("Entrez le mois :");
+	annee = prompt("Entrez l'année :");
+
+	jour++;
+
+	if (jour > 30) {
+		jour = 1;
+		mois++;
+	}
+
+	if (mois > 12) {
+		mois = 1;
+		annee++;
+	}
+
+	if (jour > 28 && mois == 2) {
+	 jour = 1;
+	 mois++;
+	}
+
+	alert("Demain on sera le " + jour + " / " + mois + " / " + annee);
+
+}
+
+
+function_exo_4_3_bis_js() {
+
+	var iAnnee=+ prompt("Quelle année ?");
+	var iMois=+ prompt("Quelle mois ?");
+	var iJour=+ prompt("Quelle jour ?");
+
+	iJour++;
+	(iJour < 10) ? iJour= "0" + iJour : "";
+	(iMois < 10) ? iMois= "0" + iMois : "";
+	(iJour > 30) ? iJour= "1" : "";
+	(iJour == "1") ? iMois++ : "";
+	(iMois > "12") ? iMois= "1" + iAnnee++ : "";
+
+	alert("Demain on sera le " + iJour + " / " + iMois);
+}
+
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_4_3_bis_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+<div id="div_php" class="center">
+
+
+                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+$jour = $_POST["jour"];
+$mois = $_POST["mois"];
+$annee = $_POST["annee"];
+
+$jour++;
+
+if($jour > 30){
+    $jour = 1;
+	$mois++;
+}
+if($mois > 12){
+    $mois = 1;
+	$annee++;
+}
+if ($jour > 28 && $mois == 2) {
+	 $jour = 1;
+	 $mois++;
+}
+
+require "exo_4_3_bis.html";
+
+? >
+
+
+
+
+
+				</textarea>
+            <form name="MyExoForm" id="MyExoForm" method="POST" action="exo_4_3_bis.php">
+                <div class="center">
+                <h1 style="margin-left:550px;">Entrez le jour :</h1>
+				</div>
+                    <input type="text" name="jour" value="" style="margin-left:550px;">
+
+                <div class="center">
+                <h1 style="margin-left:550px;">Entrez le mois :</h1>
+				</div><br>
+                    <input type="text" name="mois" value="" style="margin-left:550px;">
+
+				<div class="center">
+                <h1 style="margin-left:550px;">Entrez l'année :</h1>
+				</div><br>
+                    <input type="text" name="annee" value="" style="margin-left:550px;"><br><br>
+
+                <button type="submit" style="margin-left:600px;">PHP</button>
+
+                 <div class="center">
+                <h1 style="margin-left:550px;"><?php echo "Demain, on sera le " . '</br>' . $jour . " / " . $mois . " / " . $annee; ?></h1>
+				</div>
+            </form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

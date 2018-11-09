@@ -1,0 +1,282 @@
+
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Exo 4.7.bis</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 4.7.bis">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="exercice.css">
+
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT   document de base pour la saison 5  -->
+    <script type="text/javascript">
+        function Exo_4_7_js() {
+
+
+            var age, permis, accident, assurance;
+
+            var age = +prompt("Quel est votre age ?");
+            var permis = +prompt(" Depuis combien de temps avez vous votre permis ?");
+            var accident = +prompt("Avez vous deja eu un accident ?");
+            var assurance = +prompt("Depuis combien de temps etes vous chez nous ?");
+
+            if (((age < 25) && (permis < 2) &&  (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis < 2) && (accident == 2))) {
+
+                document.getElementById('bonjs').innerHTML = ("ROUGE !!!!");
+
+            } else if (((age < 25) && (permis > 2) && (accident == 0)) || ((age > 25) && (permis < 2) && (accident == 0)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age < 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age < 25) && (permis > 2) && (accident = 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5))) {
+
+                document.getElementById('bonjs').innerHTML = ("ORANGE !!!!");
+
+            } else if (((age > 25) && (permis > 2) && (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5))) {
+
+                document.getElementById('bonjs').innerHTML = ("VERT !!!!");
+
+            } else if ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5)) {
+
+                document.getElementById('bonjs').innerHTML = ("bleu  !!!!");
+
+            } else {
+
+                document.getElementById('bonjs').innerHTML = ("Casse toi vas voir ailleurs  !!!!");
+            }
+
+        }
+        
+        
+         function Exo_4_7_jquery() {
+
+
+            var age, permis, accident, assurance;
+
+            var age = +prompt("Quel est votre age ?");
+            var permis = +prompt(" Depuis combien de temps avez vous votre permis ?");
+            var accident = +prompt("Avez vous deja eu un accident ?");
+            var assurance = +prompt("Depuis combien de temps etes vous chez nous ?");
+
+            if (((age < 25) && (permis < 2) &&  (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis < 2) && (accident == 2))) {
+
+               $('bonjq').html("ROUGE !!!!");
+
+            } else if (((age < 25) && (permis > 2) && (accident == 0)) || ((age > 25) && (permis < 2) && (accident == 0)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age < 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age < 25) && (permis > 2) && (accident = 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5))) {
+
+             $('bonjq').html("ORANGE !!!!");
+
+            } else if (((age > 25) && (permis > 2) && (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5))) {
+
+                 $('bonjq').html("VERT !!!!");
+
+            } else if ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5)) {
+
+                $('bonjq').html("bleu  !!!!");
+
+            } else {
+
+             $('bonjq').html("Casse toi vas voir ailleurs  !!!!");
+            }
+
+        }
+        
+        
+        
+        
+    </script>
+
+    <!-- CODE JQUERY -->
+
+
+
+</head>
+
+<body>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+            <h1>Mon super exo 4.7</h1>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div>
+                <h2>PSEUDO-CODE</h2>
+                <textarea id="txt_pseudo_code">
+                    
+                VARIABLE age,permis,situation,accident,assurance 
+DEBUT
+                    ECRIRE "Quel est votre age"
+                    LIRE age
+                    ECRIRE "depuis combien de temps avez vous le permis"
+                    LIRE permis
+                    ECRIRE "Avez vous eu un Accident ?"
+                    LIRE accident
+                    ECRIRE "Le nombre d'année d'assurance "
+                    LIRE assurance
+                    
+
+                    SI  ( age < 25 ) ET ( permis < 2) ET ( accident = 0)  OU ( age < 25 ) ET ( permis > 2) ET ( accident = 1) OU ( age > 25 ) ET ( permis > 2) ET  ( accident = 1) OU ( age > 25 )  ET ( permis > 2)  ET ( accident = 0)  ALORS
+                    
+                     ECRIRE rouge
+                    
+                    
+                
+                        SI  ( age < 25 ) ET ( permis > 2) ET ( accident = 0) OU ( age > 25 ) ET ( permis < 2) ET  ( accident = 0)  OU ( age > 25 )  ET ( permis > 2)  ET ( accident = 1)            ( age < 25 ) ET ( permis < 2) ET ( accident = 0) ET ( assurance == 5 ) OU ( age < 25 ) ET ( permis > 2) ET ( accident = 1) ET (assurance = 5) OU ( age > 25 ) ET ( permis > 2) ET  ( accident = 1)  ET (assurance = 5) OU 
+                    ( age > 25 )  ET ( permis > 2)  ET ( accident = 0) ET ( assurance = 5 )ALORS
+                                
+                                    Ecrire orange  
+                                        SI ( age > 25 )  ET ( permis > 2)  ET ( accident = 0) OU  ( age < 25 ) ET ( permis > 2) ET ( accident = 0) ET (assurance =5  ) OU ( age > 25 ) ET ( permis < 2) ET  ( accident = 0) ET (assurance = 5)  OU ( age > 25 )  ET ( permis > 2)  ET ( accident = 1) ET ( assurance = 5)       ALORS
+                                            
+                                            ECRIRE VERT
+                                           
+                    
+                                                    SI    ( age > 25 )  ET ( permis > 2)  ET ( accident = 0)  ET ( assurance = 5) ALORS
+                                                            ECRIRE BLEU
+                    
+                                                                        SINON 
+                                                                            Ecrire " vous etes refusés "
+                                                    FINSI
+                                            FINSI
+                        FINSI
+FIN                    
+                    
+                    
+                                            
+                    
+                    
+				</textarea>
+            </div>
+            <div>
+                <h2 onMouseOver="showCodeJS()" onMouseOut="hideCodeJS()">Voir le JavaScript</h2>
+                <textarea id="txt_javascript">
+               
+
+ function Exo_4_7_js() {
+
+
+            var age, permis, accident, assurance;
+
+            var age = +prompt("Quel est votre age ?");
+            var permis = +prompt(" Depuis combien de temps avez vous votre permis ?");
+            var accident = +prompt("Avez vous deja eu un accident ?");
+            var assurance = +prompt("Depuis combien de temps etes vous chez nous ?");
+
+            if (((age < 25) && (permis < 2) &&  (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis < 2) && (accident == 2))) {
+
+                document.getElementById('bonjs').innerHTML = ("ROUGE !!!!");
+
+            } else if (((age < 25) && (permis > 2) && (accident == 0)) || ((age > 25) && (permis < 2) && (accident == 0)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age < 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age < 25) && (permis > 2) && (accident = 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5))) {
+
+                document.getElementById('bonjs').innerHTML = ("ORANGE !!!!");
+
+            } else if (((age > 25) && (permis > 2) && (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5))) {
+
+                document.getElementById('bonjs').innerHTML = ("VERT !!!!");
+
+            } else if ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5)) {
+
+                document.getElementById('bonjs').innerHTML = ("bleu  !!!!");
+
+            } else {
+
+                document.getElementById('bonjs').innerHTML = ("Casse toi vas voir ailleurs  !!!!");
+            }
+
+        }
+       
+			</textarea >
+                
+                
+                <textarea id="bonjs" style="font-size: 25pt">
+                
+                
+                
+                 
+                
+                </textarea>
+
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_4_7_js()">Tester mon JS</button>
+                </div>
+                <div class="div_center" id="resultat_js">
+                </div>
+            </div>
+            <div>
+                <h2 ondblclick="gereCodeJquery()">Voir le JQuery</h2>
+
+                <textarea id="txt_jquery">
+
+                      function Exo_4_7_js() {
+
+
+            var age, permis, accident, assurance;
+
+            var age = +prompt("Quel est votre age ?");
+            var permis = +prompt(" Depuis combien de temps avez vous votre permis ?");
+            var accident = +prompt("Avez vous deja eu un accident ?");
+            var assurance = +prompt("Depuis combien de temps etes vous chez nous ?");
+
+            if (((age < 25) && (permis < 2) &&  (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age > 25) && (permis < 2) && (accident == 2))) {
+
+                document.getElementById('bonjs').innerHTML = ("ROUGE !!!!");
+
+            } else if (((age < 25) && (permis > 2) && (accident == 0)) || ((age > 25) && (permis < 2) && (accident == 0)) || ((age > 25) && (permis > 2) && (accident == 1)) || ((age < 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age < 25) && (permis > 2) && (accident = 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5))) {
+
+                document.getElementById('bonjs').innerHTML = ("ORANGE !!!!");
+
+            } else if (((age > 25) && (permis > 2) && (accident == 0)) || ((age < 25) && (permis > 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis < 2) && (accident == 0) && (assurance == 5)) || ((age > 25) && (permis > 2) && (accident == 1) && (assurance == 5))) {
+
+                document.getElementById('bonjs').innerHTML = ("VERT !!!!");
+
+            } else if ((age > 25) && (permis > 2) && (accident == 0) && (assurance == 5)) {
+
+                document.getElementById('bonjs').innerHTML = ("bleu  !!!!");
+
+            } else {
+
+                document.getElementById('bonjs').innerHTML = ("Casse toi vas voir ailleurs  !!!!");
+            }
+
+        }
+    
+
+                    
+				</textarea>
+
+                <textarea id="bonjq" style="font-size: 25pt">
+                
+                
+                
+                
+                
+                </textarea>
+
+
+
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_4_7_jquery()">Tester mon JQuery</button>
+                </div>
+                <div class="div_center" id="resultat_jquery">
+                </div>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+
+</html>

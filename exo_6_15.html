@@ -1,0 +1,208 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 6.15</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 6.15">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+function Exo_6_15_js() {
+
+var i;
+var tab = [1000];
+var n =+ prompt("Entrez l'âge du gamin :");
+
+
+
+			for (i = 0; i <= 20; i++) {
+				tab[i+1] = tab[i] + tab[i] * 0.0275;
+				while(n<0) {
+					n =+ prompt("Entre 0 et 20 ans abruti :");
+							}
+				while(n>20) {
+					n =+ prompt("Entre 0 et 20 ans abruti :");
+							}
+
+			}
+
+	alert("Il y a " + tab[n].toFixed(2) + "€ sur le compte pour ses " + n + " an(s).");
+
+
+
+}
+</script>
+
+
+
+    <div id="page" style="background-image: url(Algo-JS-Jquery\css\naruto.jpg);">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 6.15</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:270px;">Pour sa naissance, la grand-mère de TITI place une somme de 1000 Euros sur son compte épargne rémunéré
+au taux<br> de 2.75% (chaque année le compte est augmenté de 2.75%). Développer un algorithme permettant
+de stocker dans un tableau sur 20 ans associant à chaque anniversaire de TITI<br> la somme acquise sur son compte.
+Puis, la grand-mère de TITI aura la possibilité de saisir un âge (compris entre 1 et<br> 20 ans) et l'algorithme affichera la
+somme correspondante qu'il y'aura alors sur le compte.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:300px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_6_15
+
+Variables i, Tableau tab, n numérique
+
+	DEBUT
+
+	tab <- (1000)
+
+	ECRIRE "Entrez l'âge du gamin :"
+	LIRE n
+
+	TANTQUE n<0 FAIRE
+		ECRIRE "Entre 0 et 20 ans :"
+		LIRE n
+	FINTANTQUE
+
+	TANTQUE n>20 FAIRE
+		ECRIRE "Entre 0 et 20 ans :"
+		LIRE n
+	FINTANTQUE
+
+
+	POUR i de 0 à 20
+		tab[i+1] <- tab[i] + tab[i] * 0.0275
+	i Suivant
+
+	ECRIRE "Il y aura ", tab(n), "€ sur le compte pour ses ", n, " an(s)."
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_6_15_js() {
+
+
+
+	var i;
+	var tab = [1000];
+	var n =+ prompt("Entrez l'âge du gamin :");
+
+	while(n<0) {
+			n =+ prompt("Entre 0 et 20 ans abruti :");
+				}
+
+	while(n>20) {
+			n =+ prompt("Entre 0 et 20 ans abruti :");
+				}
+
+
+	for (i = 0; i <= 20; i++) {
+					tab[i+1] = tab[i] + tab[i] * 0.0275;
+								}
+
+	alert("Il y aura " + tab[n].toFixed(2) + "€ sur le compte pour ses " + n + " an(s).");
+
+
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_6_15_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php">
+                <h2>PHP</h2>
+                <textarea>
+
+< ? php
+
+	$tab = [1000];
+	$n = $_POST["n"];
+
+ for ($i=0;$i<=20;$i++) {
+		$tab[$i+1] = $tab[$i] + $tab[$i] * 0.0275;
+ if($n<0) {
+		$sMessage = "Entre 0 et 20 ans : ";
+	}
+
+	if($n>20) {
+			 $sMessage = "Entre 0 et 20 ans :";
+			}
+	}
+
+
+
+	$sMessage = "Il y aura " . number_format($tab[$n],2) . "€ sur le compte pour ses " . $n . " an(s).";
+
+	require "exo_6_15.html";
+
+? >
+
+				</textarea>
+
+            <form name="MyExoForm" id="MyExoForm" method="POST" action="exo_6_15.php">
+                <div class="center">
+                <h1 style="margin-left:500px;">Entrez l'âge de l'enfant :</h1>
+				</div>
+                    <input type="text" name="n" id="n" value="" style="margin-left:520px;" <?php if($n<0) {$sMessage = "Entre 0 et 20 ans : ";} else if($n>20) {$sMessage = "Entre 0 et 20 ans :";}?>>
+				<br>
+
+                <button type="submit" style="margin-left:565px; margin-top:15px;">PHP</button>
+
+                 <div class="center">
+                <h1 style="margin-left:500px;"><?= $sMessage; ?></h1>
+				</div>
+            </form>
+
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,377 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 7.7</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 7.7">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_7_7_simple_js() {
+
+
+	var tab = [1,3,5,7,9];
+	var tab2 = [2,4,6,8,10];
+	var tab3 = [];
+	var i = 0;
+
+
+	while (tab.length + tab2.length != 0) {
+		if (tab[0] > tab2[0]) {
+			tab3[i] = tab2[0];
+			tab2.splice(0, 1);
+
+		}else if (tab[0] < tab2[0]) {
+			tab3[i] = tab[0];
+			tab.splice(0, 1);
+
+		}else if (tab.length == 0) {
+			tab3[i] = tab2[0];
+			tab2.splice(0, 1);
+
+		}else {
+			 tab3[i] = tab[0];
+			 tab.splice(0, 1);
+		}
+		i++;
+	}
+	alert(tab3);
+
+
+
+
+
+}
+</script>
+
+<script>
+function Exo_7_7_compliquee_js() {
+
+
+	var tab = [1,3,5,7,9];
+	var tab2 = [2,4,6,8,10];
+	var tab3 = [];
+	var i=0;
+	var j=0;
+	var k;
+
+
+	for(k=0; k<((tab.length)+(tab2.length)); k++) {
+
+		if((tab[i] <= tab2[j]) || (j == (tab.length))) {
+			tab3[k] = tab[i];
+			i++;
+		} else if((tab2[j] <= tab[i]) || (i == (tab.length))) {
+			tab3[k] = tab2[j];
+			j++;
+		}
+	}
+	alert(tab3);
+
+
+
+
+
+}
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 7.7</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:300px;">Écrivez un algorithme qui fusionne deux tableaux (déjà existants) dans un troisième, qui devra être trié.<br><br>
+Attention ! On présume que les deux tableaux de départ sont préalablement triés : il est donc irrationnel de faire une simple concaténation des deux tableaux de départ, puis d'opérer un tri : comme quand on se trouve face à deux tas de papiers déjà triés et qu'on veut les réunir, il existe une méthode bien plus économique (et donc, bien plus rationnelle...)</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:300px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+/ Méthode simple /
+
+Algorithme_Exercice_7_7
+
+Variables i, Tableau tab, Tableau tab2, Tableau tab3 numérique
+
+DEBUT
+
+
+	tab <- (1,3,5,7,9)
+	tab2 <- (2,4,6,8,10)
+	tab3 <- ()
+	i <- 0
+
+
+	TANTQUE tab.length + tab2.length != 0 FAIRE
+
+		SI tab(0) > tab2(0) ALORS
+			tab3(i) <- tab2(0)
+			tab2.splice(0, 1)
+
+		SINONSI tab(0) < tab2(0) ALORS
+			tab3(i) <- tab(0)
+			tab.splice(0, 1)
+
+		SINONSI naruto.length == 0 ALORS
+			tab3(i) <- tab2(0)
+			tab2.splice(0, 1)
+
+		SINON
+			 tab3(i) <- tab(0)
+			 tab.splice(0, 1)
+		FINSI
+
+		i Suivant
+
+	FINTANTQUE
+
+	ECRIRE tab3
+
+
+
+FIN
+
+
+
+
+
+
+/ Méthode compliquée /
+
+Algorithme_Exercice_7_7
+
+Variables i, j, k numérique
+Tableau tab, tab2, tab3
+
+DEBUT
+
+	tab <- (1,3,5,7,9)
+	tab2 <- (2,4,6,8,10)
+	tab3 <- ()
+	i <- 0
+	j <- 0
+
+
+
+	POUR k de 0 à k<((tab.length)+(tab2.length))
+
+		SI tab(i) <= tab2(j) OU j == tab.length ALORS
+			tab3(k) <- tab(i)
+			i Suivant
+		FINSI
+
+		SINONSI tab(j) <= naruto(i) OU i == tab.length ALORS
+			tab3(k) <- tab2(j)
+			j Suivant
+		FINSI
+
+	k Suivant
+
+	ECRIRE tab3
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+/ Méthode simple /
+
+
+function Exo_7_7_simple_js() {
+
+
+	var tab = [1,3,5,7,9];
+	var tab2 = [2,4,6,8,10];
+	var tab3 = [];
+	var i = 0;
+
+
+	while (tab.length + tab2.length != 0) {
+		if (tab[0] > tab2[0]) {
+			tab3[i] = tab2[0];
+			tab2.splice(0, 1);
+
+		}else if (tab[0] < tab2[0]) {
+			tab3[i] = tab[0];
+			tab.splice(0, 1);
+
+		}else if (tab.length == 0) {
+			tab3[i] = tab2[0];
+			tab2.splice(0, 1);
+
+		}else {
+			 tab3[i] = tab[0];
+			 tab.splice(0, 1);
+		}
+		i++;
+	}
+	alert(tab3);
+
+
+
+
+
+}
+
+
+
+/ Méthode compliquée /
+
+function Exo_7_7_compliquee_js() {
+
+
+	var tab = [1,3,5,7,9];
+	var tab2 = [2,4,6,8,10];
+	var tab3 = [];
+	var i=0;
+	var j=0;
+	var k;
+
+
+	for(k=0; k<((tab.length)+(tab2.length)); k++) {
+
+		if((tab[i] <= tab2[j]) || (j == (tab.length))) {
+			tab3[k] = tab[i];
+			i++;
+		} else if((tab2[j] <= tab[i]) || (i == (tab.length))) {
+			tab3[k] = tab2[j];
+			j++;
+		}
+	}
+	alert(tab3);
+
+
+
+}
+
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_7_7_simple_js()">Tester mon JS - Méthode simple</button>
+                </div>
+				<div class="div_center">
+                    <button class="btn_green" onClick="Exo_7_7_compliquee_js()">Tester mon JS - Méthode compliquée</button>
+                </div>
+            </div>
+
+      <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+$i=0;
+$tab = [1, 3, 5, 7, 9];
+$tab2 = [2, 4, 6, 8, 10];
+$tab3 = [];
+$iStop =0;
+
+while (((count($tab) + count($tab2)) > 0)) {
+		$iStop++;
+		error_log("NB tab = " . count($tab) . " | NB tab2 = " . count($tab2));
+		if (($tab[0] > $tab2[0]) && (isset($tab[0])) && (isset($tab2[0])))  {
+				$tab3[$i] = $tab2[0];
+				array_splice($tab2,0, 1);
+
+		} else if (($tab[0] < $tab2[0]) && (isset($tab[0])) && (isset($tab2[0]))) {
+				$tab3[$i] = $tab[0];
+				 array_splice($tab,0, 1);
+
+		} else if (count($tab) == 0) {
+				$tab3[$i] = $tab2[0];
+				 array_splice($tab2,0, 1);
+			 } else {
+				$tab3[$i] =$tab[0];
+			 array_splice($tab,0, 1);
+		}
+		$i++;
+
+}
+
+$sMessage=implode("|",$tab3);
+
+
+
+     require "exo_7_7.html";
+
+? >
+
+
+
+
+
+</textarea><br>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_7_7.php">
+
+			<div class="center" style="margin-left:-100px;">
+
+
+
+                <h1>le tableau</h1>
+
+
+            </div>
+			</div>
+
+
+
+
+            <button type="submit" style="margin-left:720px;">php</button><br>
+
+						<div class="center" style="margin-left:-100px;">
+			            <h1><span> <?= $sMessage; ?>  </span></h1>
+						</div>
+            </form>
+			    </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

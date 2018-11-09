@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.5</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.5">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="../css/algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_10_5_js() {
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+
+var Nouveau.Nom = prompt("Entrez le nom : ");
+var Nouveau.Prénom = prompt("Entrez le prénom : ");
+var Nouveau.Tel = prompt("Entrez le téléphone : "); 
+var Nouveau.Mail = prompt("Entrez le mail : ");
+	
+window.open("Adresse.txt", 1);
+var i = -1;
+var insert = false;
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Insert = true;
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes[i] = MonPote;
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+for(j=0; j<=i; j++) {
+  EcrireFichier 1, MesPotes[j];
+  }
+close(1);
+	
+
+
+}	    				
+</script>
+
+<script>
+function Exo_10_5_jquery()
+{
+
+	var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+				
+	
+}
+
+
+
+
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center">
+            <h1>Mon super exo 10.5</h1>
+			</div>
+<div class="center">
+			<h1 style="width:540px; height:210px;">
+Ecrivez un algorithme qui permette de modifier un renseignement (pour simplifier, disons uniquement<br>
+le nom de famille) d’un membre du carnet d’adresses.<br>
+Il faut donc demander à l’utilisateur quel est le nom à modifier, puis quel est le nouveau nom, et mettre à jour le fichier. Si le nom recherché n'existe pas, le programme devra le signaler.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1>PSEUDO-CODE</h1>
+                <textarea>
+   
+
+
+Algorithme_Exercice_10_5
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote en Bottin
+Variables Ancien, Nouveau en Caractère*20
+Variables i, j en Numérique
+Variable Trouvé en Booléen
+Debut
+Ecrire "Entrez le nom à modifier : "
+Lire Ancien
+Ecrire "Entrez le nouveau nom : "
+Lire Nouveau
+
+Ouvrir “Adresse.txt” sur 1 pour Lecture
+i ← -1
+Trouvé ← Faux
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i) 
+  LireFichier 1, MonPote
+  Si MonPote.Nom = Ancien.Nom Alors
+    Trouvé ← Vrai
+    MonPote.Nom ← Nouveau
+  FinSi
+  MesPotes(i) ← MonPote
+FinTantQue
+Fermer 1
+
+Ouvrir "Adresse.txt" sur 1 pour Ecriture
+Pour j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j Suivant
+Fermer 1
+
+Si Trouvé Alors 
+  Ecrire "Modification effectuée"
+Sinon
+  Ecrire "Nom inconnu. Aucune modification effectuée"
+FinSi
+Fin
+	
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1>JavaScript</h1>
+                <textarea>
+				
+			
+function Exo_10_5_js() {
+
+		var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+	
+
+				
+	
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_5_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+            <div id="div_jquery" class="center">
+                <h1>JQuery</h1>
+                <textarea>
+
+function Exo_10_5_jquery() {
+
+	
+		var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+
+
+	
+	
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_5_jquery();">Tester mon JQuery</button>
+                    
+                </div>
+            </div>
+      <div id="div_php" class="center">
+                <h1>PHP</h1>
+                <textarea>
+
+< ? php 
+
+            $sMessage="";
+            $i=0;
+            $naruto = [1, 3, 5, 7, 9];
+            $sasuke = [2, 4, 6, 8, 10];
+            $narutosasuke = [];
+            $iStop =0;
+ 
+            while (((count($naruto) + count($sasuke)) > 0)) {
+                $iStop++;
+                error_log("NB naruto = " . count($naruto) . " | NB sasuke = " . count($sasuke));
+                if (($naruto[0] > $sasuke[0]) && (isset($naruto[0])) && (isset($sasuke[0])))  {
+                    $narutosasuke[$i] = $sasuke[0];
+                    array_splice($sasuke,0, 1);
+                    
+                } else if (($naruto[0] < $sasuke[0]) && (isset($naruto[0])) && (isset($sasuke[0]))) {
+                    $narutosasuke[$i] = $naruto[0];
+                     array_splice($naruto,0, 1);
+                   
+                } else if (count($naruto) == 0) {
+                    $narutosasuke[$i] = $sasuke[0];
+                     array_splice($sasuke,0, 1);
+                   } else {
+                    $narutosasuke[$i] =$naruto[0];
+                   array_splice($naruto,0, 1);
+                }
+                $i++;
+
+            }
+          $sMessage=implode("|",$narutosasuke);
+        
+
+
+     require "exo_10_5.html";
+
+? >
+				
+				
+				
+				
+				
+				</textarea>
+
+
+			
+			
+		<form name="myExoForm" id="myExoForm" method="POST" action="exo_10_5.php">
+        <div id="form_PHP">
+            <!---->
+			<div class="center" style="margin-left:-100px;">
+            <h1><span><?= $sM; ?></span></h1>
+			</div>
+            <!---->
+			<span>Choisissez le nom à modifier :</span>
+			<input list="names" name="selected_name" autofocus>
+			<br>
+			<datalist id="names">
+				<option value="Uchiwa Sasuke"></option>
+				<option value="Uchiwa Itachi"></option>
+				<option value="Uzumaki Naruto"></option>
+				<option value="Monkey Luffy"></option>
+				<option value="Haruno Sakura"></option>
+			</datalist>
+			<br>
+			<span>Remplacer par :</span>
+			<input type="text" name="sNom" id="sNom" placeholder="Nom" size="20" maxlength="20">
+			<input type="text" name="sNomSwap" id="sNomSwap" placeholder="Prénom" size="15" maxlength="15">
+			<br>
+            <input type="hidden" name="exe" id="exe">
+            <!---->
+            <button type="submit">php</button><br/>
+        </div>
+    </form>
+			    </div>
+				
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

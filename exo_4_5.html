@@ -1,0 +1,218 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 4.5</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 4.5">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script>
+function Exo_4_5_js() {
+
+	var AGE,  GENRE;
+	var sTXT;
+	
+	AGE=prompt("renseignez votre âge");
+	GENRE=prompt("renseignez votre genre femme / homme");
+	
+	if ((((AGE >= 18) && (AGE <=35)) && (GENRE == 'femme')) || ((AGE > 20) && (GENRE == 'homme'))) {
+		sTXT= "Imposable";
+	} else {
+		sTXT= "Non Imposable";
+	}
+	
+	// j'enlève mon if 
+	// j'enlève ma 1ère accollade et remplace par un ?
+	// Je place mon 1er bloc VRAI d'instructions 
+	// Je met le : séparateur à la place de } else {
+	// Je place mon 2nd bloc FAUX d'instructions
+	// et j'enlève ma dernière accollade
+
+	
+	alert(sTXT);
+}
+</script>
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 4.5</h1>
+			</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:300px;">Énoncé : Les habitants de Toon’sCity paient l’impôt selon les règles suivantes :<br><br>
+																	 les hommes de plus de 20 ans paient l’impôt<br>
+																	 les femmes paient l’impôt si elles ont entre 18 et 35 ans<br>
+																	 les autres ne paient pas d’impôt<br><br>
+		Le programme demandera donc l’âge et le sexe du Toon,<br> et se prononcera donc ensuite sur le fait que l’habitant est imposable ou non.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+                    
+                    
+Algorithme_Exercice_4_5           
+                    
+                   
+Variables GENRE en caractère, AGE en Numérique
+
+DEBUT
+
+	ECRIRE "renseignez votre âge"
+	LIRE AGE
+
+	ECRIRE "renseignez votre genre femme / homme :"
+	LIRE GENRE
+
+	SI (((AGE >= 18 ET AGE <= 35) ET (GENRE == 'femme')) OU (AGE > 20 ET GENRE == 'homme'))) ALORS
+		ECRIRE "Imposable"
+	FINSI 
+	
+	SINON 
+		ECRIRE "Non Imposable"
+	FINSI
+
+FIN
+
+
+// Autre version
+
+SI (genre == "Homme") ET (age > 20) ALORS 
+		"Imposable"
+SINONSI (genre = "Femme") ET (age >= 18) ET (age <= 30) ALORS 
+		"Imposable"
+SINON
+		"Non Imposable"
+FINSI
+
+
+
+
+SI bCondition1 ou bCondition2 ALORS 
+		"Imposable"
+SINON 
+		"Non imposable"
+FINSI
+
+SI Condition1(==TRUE) ou bCondition2==TRUE
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+
+
+function Exo_4_5_js() {
+
+	var AGE,  GENRE;
+	var sTXT;
+	
+	AGE=prompt("renseignez votre âge");
+	GENRE=prompt("renseignez votre genre femme / homme");
+	
+	if ((((AGE >= 18) && (AGE <=35)) && (GENRE == 'femme')) || ((AGE > 20) && (GENRE == 'homme'))) {
+		sTXT= "Imposable";
+	} else {
+		sTXT= "Non Imposable";
+	}
+	
+	// j'enlève mon if 
+	// j'enlève ma 1ère accollade et remplace par un ?
+	// Je place mon 1er bloc VRAI d'instructions 
+	// Je met le : séparateur à la place de } else {
+	// Je place mon 2nd bloc FAUX d'instructions
+	// et j'enlève ma dernière accollade
+
+	
+	alert(sTXT);
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_4_5_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+		<div id="div_php" class="center">
+		                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+
+< ? php 
+
+$sGenre = $_POST["sexe"];
+$iAge = $_POST["age"];
+
+
+if(isset($_POST["sexe"]) && isset($_POST["age"])) {
+	if ((($_POST["age"] >= 18 && $_POST["age"] <= 35) && $_POST["sexe"] == 'femme' ) || ($_POST["age"] > 20 && $_POST["sexe"] == 'homme')) {
+			$sMessage = "Imposable";
+		} else {
+			$sMessage = "Non Imposable";
+		}
+}
+
+require "exo_4_5.html";
+
+? >
+				
+				
+				
+				
+				
+				</textarea>
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_4_5.php">
+				
+				
+					<h4>renseignez votre âge :</h4>
+					<input type="text" name="age" id="age" value="" size="10" maxlength="10" style="margin-left: 610px;">
+					<h4>renseignez votre genre femme / homme :</h4>
+					<input type="text" name="sexe" id="sexe" value="" size="10" maxlength="10" style="margin-left: 610px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+
+				
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

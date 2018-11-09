@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 6.12</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 6.12">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+
+function Exo_6_12_js() {
+
+	var tab = [];
+
+	var n =+ prompt("Entrez le nombre de valeurs :");
+
+	for(i=0; i<=n-1; i++) {
+		tab[i] =+ prompt("Entrez le nombre numéro : " + (i+1));
+
+		tab[i] = tab[i] + 1;
+	}
+
+
+
+	alert("Nouveau tableau : " + tab.toString());
+
+
+
+
+}
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 6.12</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:120px;">Ecrivez un algorithme qui permette la saisie d’un nombre quelconque de valeurs, sur le principe de l’ex 6.8.
+			Toutes<br> les valeurs doivent être ensuite augmentées de 1, et le nouveau tableau sera affiché à l’écran.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_6_12
+
+Variables i, n, Tableau tab numérique
+
+DEBUT
+
+	ECRIRE "Entrez le nombre de valeurs :"
+	LIRE n
+
+	REDIM tab(n-1)
+
+	POUR i de 0 à n-1
+		ECRIRE "Entrez le nombre numéro : ", i + 1
+		LIRE tab(i)
+		tab(i) <- tab(i) + 1
+	i Suivant
+
+	ECRIRE "Nouveau tableau : ", tab
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_6_12_js() {
+
+	var tab = [];
+	var n =+ prompt("Entrez le nombre de valeurs :");
+
+	for(i=0; i<=n-1; i++) {
+	tab[i] =+ prompt("Entrez le nombre numéro : " + (i+1));
+	tab[i] = tab[i] + 1;
+			}
+
+		alert("Nouveau tableau : " + tab.toString());
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_6_12_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

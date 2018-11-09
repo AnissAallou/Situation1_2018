@@ -1,0 +1,226 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 5.2.bis</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 5.2">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script>
+function Exo_5_2_bis_js() {
+
+
+var n = prompt("Entrez un nombre entre 1 et 100");
+var iCoup;
+var iAleatoire = Math.floor((100)*Math.random()+1);
+
+
+    while (n != Math.floor((100)*Math.random()+1)) {
+
+	if (n > Math.floor((100)*Math.random()+1)) {
+
+       n = prompt("Veuillez écrire un chiffre plus petit");
+       iCoup++;
+
+
+    }
+	else if (n < Math.floor((100)*Math.random()+1)) {
+
+		n = prompt("Veuillez écrire un chiffre plus grand");
+        iCoup++;
+
+    }
+
+	else {
+
+        alert("Nombre valide");
+
+    }
+}
+
+}
+</script>
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1 style="width:230px;">Mon super exo 5.2.bis</h1>
+		</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:240px;">Énoncé :
+			b) Ecrire un algorithme qui choisit un nombre au hasard compris entre 1 et 100.<br>
+			Pour ceci, on utilise la fonction :<br>
+					iNombreHasard <- random[1..100]<br>
+			Demander à l'utilisateur de trouver le nombre. On fera apparaître un message : « Plus petit ! », et inversement,<br>
+			« Plus grand ! » jusqu’à ce que l'utilisateur ait trouvé et afficher en combien de coups.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:220px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_5_2_bis
+
+Variables n numérique
+
+DEBUT
+
+Variables n, iCoup, iAleatoire numérique
+
+ECRIRE "Entrez un nombre entre 1 et 100"
+LIRE n
+
+iAleatoire <- rand(1, 100)
+
+
+  TANTQUE n != iAleatoire FAIRE
+
+		SI n > iAleatoire ALORS
+       ECRIRE "Veuillez écrire un chiffre plus petit"
+			 LIRE n
+       iCoup++;
+		FINSI
+
+	 	SINON SI n < iAleatoire ALORS
+			  ECRIRE "Veuillez écrire un chiffre plus grand"
+				LIRE n
+        iCoup++
+		FINSI
+
+			SINON
+	       ECRIRE "Nombre valide"
+		  FINSI
+		FINTANTQUE
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_5_2_bis_js() {
+
+var n = prompt("Entrez un nombre entre 1 et 100");
+var iCoup;
+var iAleatoire = Math.floor((100)*Math.random()+1);
+
+while (n != Math.floor((100)*Math.random()+1)) {
+		   if (n > Math.floor((100)*Math.random()+1)) {
+				n = prompt("Veuillez écrire un chiffre plus petit");
+				iCoup++;
+			   }
+				else if (n < Math.floor((100)*Math.random()+1)) {
+				n = prompt("Veuillez écrire un chiffre plus grand");
+				iCoup++;
+				  }
+		else {
+		 alert("Nombre valide");
+  }
+}
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_2_bis_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php" class="center">
+                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+
+$n = $_POST["n"];
+$iCoup = 0;
+$iAleatoire = rand( 1 , 100 );
+
+
+
+
+    if ($_POST["n"] > $iAleatoire) {
+
+       $sMessage = "Veuillez ecrire un chiffre plus petit";
+        $iCoup++;
+
+
+    } else if   ($_POST["n"] < $iAleatoire) {
+
+		$sMessage = "Veuillez ecrire un chiffre plus grand";
+        $iCoup++;
+
+    } else {
+
+        $sMessage = "Nombre valide";
+
+    }
+
+
+
+require "exo_5_2_bis.html";
+
+? >
+
+
+				</textarea>
+
+
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_5_2_bis.php">
+
+
+					<h4>Entrez un nombre entre 1 et 100 :</h4>
+					<input type="text" name="n" id="n" value="" size="10" maxlength="10" style="margin-left:  610px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+					<div class="center">
+				<button class="btn_green" onclick="self.location.href='exo_5_2.html'">Retour Exo 5.2</button>
+		</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

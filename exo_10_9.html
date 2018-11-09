@@ -1,0 +1,169 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.9</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.9">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_10_9_js() {
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+
+var Nouveau.Nom = prompt("Entrez le nom : ");
+var Nouveau.Prénom = prompt("Entrez le prénom : ");
+var Nouveau.Tel = prompt("Entrez le téléphone : "); 
+var Nouveau.Mail = prompt("Entrez le mail : ");
+	
+window.open("Adresse.txt", 1);
+var i = -1;
+var insert = false;
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Insert = true;
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes[i] = MonPote;
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+for(j=0; j<=i; j++) {
+  EcrireFichier 1, MesPotes[j];
+  }
+close(1);
+	
+
+
+}	    				
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 10.9</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:450px; height:325px;">
+Les enregistrements d’un fichier contiennent<br>
+les deux champs Nom (chaîne de caractères)<br> et Montant (Entier). Chaque enregistrement correspond à une vente conclue par un<br> commercial d’une société.<br><br>
+On veut mémoriser dans un tableau,<br> puis afficher à l'écran, le total de ventes<br> par vendeur. Pour simplifier, on suppose<br> que le fichier de départ est déjà trié alphabétiquement par vendeur.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:350px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+   
+
+
+Algorithme_Exercice_10_9
+
+Structure Vendeur
+  Nom en Caractère * 20
+  Montant en Numérique
+Fin Structure
+Tableau MesVendeurs() en Vendeur
+Variables NomPrec * 20, Lig, Nom en caractère
+Variables Somme, Vente en Numérique
+Debut
+Ouvrir "Ventes.txt” sur 1 pour Lecture
+i ← -1
+Somme ← 0
+NomPréc ← ""
+Tantque Non EOF(1)
+  LireFichier 1, Lig
+  Nom ← Mid(Lig, 1, 20)
+  Vente ← CNum(Mid(Lig, 21, 10)
+  Si Nom = NomPrec Alors
+    Somme ← Somme + Vente
+  Sinon
+    i ← i + 1
+    Redim MesVendeurs(i)
+    MesVendeurs(i).Nom ← NomPrec
+    MesVendeurs(i).Montant ← Somme
+    Somme ← 0
+    NomPrec ← Nom
+  FinSi
+FinTantQue
+i ← i + 1
+Redim MesVendeurs(i)
+MesVendeurs(i).Nom ← NomPrec
+MesVendeurs(i).Montant ← Somme
+Fermer 1
+Pour j ← 0 à i
+  Ecrire MesVendeurs(j)
+j suivant
+Fin
+	
+				</textarea>
+            </div>
+  
+				
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

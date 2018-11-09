@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 6.10</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 6.10">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+<style>
+	table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées */
+}
+td
+{
+    border: 1px solid cyan;
+}
+</style>
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+function Exo_6_10_js() {
+
+
+	var tabA = [4,8,7,9,1,5,4,6];
+	var tabB = [7,6,5,2,1,3,7,4];
+	var i;
+	var tabAB = [];
+
+
+
+	for(i=0; i<=7; i++) {
+			tabAB[i] = tabA[i] + tabB[i];
+	}
+
+	alert(tabAB.toString());
+
+
+
+}
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 6.10</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:340px;">Ecrivez un algorithme constituant un tableau, à partir de deux tableaux de même longueur préalablement saisis.<br>
+			Le nouveau tableau sera la somme des éléments des<br> deux tableaux de départ.<br><br>
+<table>
+<tr>
+	<td style="border:none;">Tableau 1 : </td>
+	<td>4</td>
+	<td>8</td>
+	<td>7</td>
+	<td>9</td>
+	<td>1</td>
+	<td>5</td>
+	<td>4</td>
+	<td>6</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+	<td style="border:none;">Tableau 2 : </td>
+	<td>7</td>
+	<td>6</td>
+	<td>5</td>
+	<td>2</td>
+	<td>1</td>
+	<td>3</td>
+	<td>7</td>
+	<td>4</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+	<td style="border:none;">Tableau à constituer :</td>
+	<td>11</td>
+	<td>14</h2></td>
+	<td>12</td>
+	<td>11</td>
+	<td>2</td>
+	<td>8</td>
+	<td>11</td>
+	<td>10</td>
+</tr>
+</table></h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_6_10
+
+Variables n, i, Tableau tabA, Tableau tabB, Tableau tabAB numérique
+
+DEBUT
+
+
+	REDIM tabA(n-1)
+	tabA = [4,8,7,9,1,5,4,6];
+
+	REDIM tabB(n-1)
+	tabB = [7,6,5,2,1,3,7,4];
+
+
+
+	POUR i de 0 à 7
+			tabAB(i) = tabA(i) + tabB(i)
+	i Suivant
+
+	ECRIRE tabAB
+
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_6_10_js() {
+
+
+	var tabA = [4,8,7,9,1,5,4,6];
+	var tabB = [7,6,5,2,1,3,7,4];
+	var i;
+	var tabAB = [];
+
+
+
+	for(i=0; i<=7; i++) {
+			tabAB[i] = tabA[i] + tabB[i];
+	}
+
+	alert(tabAB.toString());
+
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_6_10_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+< ? php
+
+
+	$tabA = [4,8,7,9,1,5,4,6];
+	$tabB = [7,6,5,2,1,3,7,4];
+	$i=0;
+	$tabAB = [];
+
+
+
+	for($i=0; $i<=7; $i++) {
+			$tabAB[$i] = $tabA[$i] + $tabB[$i];
+	}
+
+	$sMessage = $tabAB;
+
+
+
+   require "exo_6_10.html";
+
+? >
+
+				</textarea>
+				<form id="form_exo_php" method="POST" action="exo_6_10.php">
+					<h1 style="margin-left:220px; width:860px;"><?= var_dump($sMessage); ?></h1>
+					<button type="submit" style="margin-left: 625px;">PHP</button>
+				</form>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

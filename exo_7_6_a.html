@@ -1,0 +1,161 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Exo 7.6</title>
+    <title>Exo 7.6</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 7.6">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        function exo_7_6_js() {
+
+            var aTab = [-7, 4, 3, 11, 27];
+            var i;
+            var iMin = 4;
+            var iMax = 0;
+            for (i = 1; i <= aTab.length; i++) {
+                if (aTab[i] > iMax) {
+                    iMax = +aTab[i];
+                } else if (aTab[i] < iMin) {
+                    iMin = +aTab[i];
+                }
+            }
+
+            alert("Dans le tableau : " + aTab.join(",") + " l'ecart est de  : " + (iMax - iMin));
+
+        }
+
+
+        function exo_7_6_js_form() {
+
+            var aTab = [-7, 4, 3, 11, 27];
+            var i;
+            var iMin = 4;
+            var iMax = 0;
+            
+            for (i = 1; i <= aTab.length; i++) {
+                if (aTab[i] > iMax) {
+                    iMax =aTab[i];
+                } else if (aTab[i] < iMin) {
+                    iMin =aTab[i];
+                }
+            }
+
+            document.getElementById('div_result').innerHTML = ("Dans le tableau : " + aTab.join(",") + " l'ecart est de  : " + (iMax - iMin));
+
+        }
+
+        function exo_7_6_jquery_form() {
+
+            var aTab = [-7, 4, 3, 11, 27];
+            var i;
+            var iMin = 4;
+            var iMax = 0;
+
+            
+            for (i = 1; i <= aTab.length; i++) {
+                if (aTab[i] > iMax) {
+                    iMax =aTab[i];
+                } else if (aTab[i] < iMin) {
+                    iMin =aTab[i];
+                }
+            }
+
+            $('#div_result').html("Dans le tableau : " + aTab.join(",") + " l'ecart est de  : " + (iMax - iMin));
+
+        }
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+            <h1>Exo 7.6</h1>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <textarea>
+ALGO 7.6 
+                
+                Variable i,iMax,iMin en numérique
+                Tableau aTab(-7,4,3,11,27) en numérique
+                
+                
+DEBUT
+                POUR i à aTab FAIRE
+                    SI aTab[i] > iMax ALORS
+                        iMax = aTab[i]
+                    SINON SI  aTab[i] < iMin ALORS
+                        iMin = aTab[i]
+                    i suivant
+                    FINSI
+                FINPOUR
+                
+                ECRIRE "Dans le tableau l'ecart est de " iMax- iMois
+                                            
+FIN
+                 
+                
+                
+                
+                
+         
+              	</textarea>
+
+
+
+            <form name="myExoForm" id="myExoForm" method="POST" action="exo_7_6_b.php">
+
+                <div class="message">
+
+
+                    le tableau yeah
+
+
+                </div>
+                <span> <?=   $sMessage; ?>  </span>
+
+                <input type="text" name="iReponseUser" id="iReponseUser" value="" size="10" maxlength="10"> Veuillez rentrer votre valeur
+                <input type="hidden" name="aTab" id="aTab" value="" size="3" maxlength="3">
+                <input type="hidden" name="iNombre" id="iNombre" value="" size="3" maxlength="3">
+                <div id="div_result" class="message"> </div>
+                <div id="div_result1" class="message"> </div>
+                <div id="div_result2" class="message"> </div>
+
+
+                <button onClick="exo_7_6_js(); return false;">JS PROMPT</button>
+                <button onClick="exo_7_6_js_form(); return false;">JS FORM</button>
+                <button onClick="exo_7_6_jquery_form(); return false;">JQUERY</button>
+                <button type="submit">php</button>
+
+            </form>
+
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer>
+        </footer>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 8.5</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 8.5">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_8_5_1_js() {
+
+
+	var T = [];
+	var k, m;
+
+	for(k=0; k<=3; k++) {
+		T[k] = [];
+		for(m=0; m<=1; m++) {
+			T[k][m] = 2*k + (m+1);
+					}
+			}
+
+	for(k=0; k<=3; k++) {
+		 for(m=0; m<=1; m++) {
+			alert(T[k][m]);
+		 }
+	}
+
+
+
+
+
+
+}
+</script>
+
+<script>
+function Exo_8_5_2_js() {
+
+
+	var T = [];
+	var k, m;
+
+	for(k=0; k<=3; k++) {
+		T[k] = [];
+		for(m=0; m<=1; m++) {
+			T[k][m] = (k+1) + 4*m;
+					}
+			}
+
+	for(k=0; k<=3; k++) {
+		 for(m=0; m<=1; m++) {
+			alert(T[k][m]);
+		 }
+	}
+
+
+
+
+
+
+}
+</script>
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 8.5</h1>
+			</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:380px; height:355px;">Mêmes questions que l'exercice 8.5, en remplaçant la ligne :<br><br>
+			T(k,m) ← k + m<br><br>
+			par<br><br>
+			T(k, m) ← 2*k + m<br><br>
+			puis par :<br><br>
+			T(k, m) ← (k+1)+4*m</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:500px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+// Première version //
+
+
+Algorithme_Exercice_8_5_1
+
+Variables k, m numérique
+Tableau T
+
+DEBUT
+
+	POUR k allant de 0 à 3
+		POUR m allant de 0 à 1
+			T(k,m) = 2*k + (m+1)
+		m suivant
+	k suivant
+
+	POUR k allant de 0 à 3
+		 POUR m allant de 0 à 1
+			ECRIRE T(km)
+		 m suivant
+	k suivant
+
+FIN
+
+
+// Seconde version
+
+Algorithme_Exercice_8_5_2
+
+Variables k, m numérique
+Tableau T
+
+DEBUT
+
+	POUR k allant de 0 à 3
+		POUR m allant de 0 à 1
+			T(k,m) = (k+1) + 4*m
+		m suivant
+	k suivant
+
+	POUR k allant de 0 à 3
+		 POUR m allant de 0 à 1
+			ECRIRE T(k,m)
+		 m suivant
+	k suivant
+
+FIN
+
+
+
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+// Première version //
+
+
+function Exo_8_5_1_js() {
+
+	var T = [];
+	var k, m;
+
+	for(k=0; k<=3; k++) {
+		T[k] = [];
+		for(m=0; m<=1; m++) {
+			T[k][m] = 2*k + (m+1);
+					}
+			}
+
+	for(k=0; k<=3; k++) {
+		 for(m=0; m<=1; m++) {
+			alert(T[k][m]);
+		 }
+	}
+
+}
+
+
+// Seconde version //
+
+
+function Exo_8_5_2_js() {
+
+
+	var T = [];
+	var k, m;
+
+	for(k=0; k<=3; k++) {
+		T[k] = [];
+		for(m=0; m<=1; m++) {
+			T[k][m] = (k+1) + 4*m;
+					}
+			}
+
+	for(k=0; k<=3; k++) {
+		 for(m=0; m<=1; m++) {
+			alert(T[k][m]);
+		 }
+	}
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_8_5_1_js()">Tester mon JS 1</button>
+                </div>
+				<div class="div_center">
+                    <button class="btn_green" onClick="Exo_8_5_2_js()">Tester mon JS 2</button>
+                </div>
+
+            </div>
+
+      <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+// Première version //
+
+< ? php
+
+	$sM = "";
+
+
+
+	$T = [];
+	$sM = "";
+
+	$Val = 1;
+	for ($k=0; $k<=3; $k++) {
+		$T[$k] = [];
+		for ($m=0; $m<=1; $m++) {
+			$T[$k][$m] = 2*$k + ($m+1);
+		}
+	}
+	for ($k=0; $k<=3; $k++) {
+		for ($m=0; $m<=1; $m++) {
+			$sM = $sM . $T[$k][$m] ." ";
+		}
+	}
+
+require "exo_8_5.html";
+
+? >
+
+
+// Seconde version //
+
+< ? php
+
+	$sN = "";
+
+	$A = [];
+	$sN = "";
+
+	$Val = 1;
+	for ($k=0; $k<=3; $k++) {
+		$A[$k] = [];
+		for ($m=0; $m<=1; $m++) {
+			$A[$k][$m] = ($k+1) + 4*$m;
+		}
+	}
+	for ($k=0; $k<=3; $k++) {
+		for ($m=0; $m<=1; $m++) {
+			$sN = $sN . $A[$k][$m] ." ";
+		}
+	}
+
+
+	require "exo_8_5.html";
+
+? >
+
+
+
+
+
+				</textarea>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_8_5.php">
+
+			<div class="center" style="margin-left:-100px;">
+            <div class="message">
+
+
+                <h1>le tableau</h1>
+
+
+            </div>
+			</div>
+
+			<div class="center" style="margin-left:-100px;">
+            <h1><span> <?php if(isset($sM)) { echo $sM; } ?>  </span></h1>
+			</div>
+
+
+
+            <button type="submit">php</button>
+
+            </form>
+
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_8_5.php">
+
+			<div class="center" style="margin-left:-100px;">
+            <div class="message">
+
+
+                <h1>le tableau</h1>
+
+
+            </div>
+			</div>
+
+			<div class="center" style="margin-left:-100px;">
+            <h1><span> <?php if(isset($sN)) { echo $sN; } ?>  </span></h1>
+			</div>
+
+
+
+
+            </form>
+			    </div>
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

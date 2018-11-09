@@ -1,0 +1,196 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 5.2.a</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 5.2.a">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="../css/algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+<?php 
+function Exo_5_2_a_php() {
+
+	$n = "Entrez un nombre entre 10 et 20";
+	
+	while (($n<10) || ($n>20)) {
+	if ($n<10) {
+			$n = "Plus grand !");
+			} else if (n>20) {
+			$n = "Plus petit !";
+			} 
+		}
+			
+	if (($n>=10) && ($n<=20)) {
+			echo "OK c'est bon :p";
+		}
+		
+	
+
+
+}
+?>
+<script>
+function Exo_5_2_a_js() {
+
+	var n = prompt("Entrez un nombre entre 10 et 20");
+	
+	while ((n<10) || (n>20)) {
+	if (n<10) {
+			var n = prompt("Plus grand !");
+			} else if (n>20) {
+			var n = prompt("Plus petit !");
+			} 
+		}
+			
+	if ((n>=10) && (n<=20)) {
+			alert("OK c'est bon :p");
+		}
+		
+	
+
+
+}
+</script>
+
+<script>
+function Exo_5_2_a_jquery() {
+
+    var n = prompt("Entrez un nombre entre 10 et 20");
+	
+	while ((n<10) || (n>20)) {
+	if (n<10) {
+			var n = prompt("Plus grand !");
+			} else if (n>20) {
+			var n = prompt("Plus petit !");
+			} 
+		}
+			
+	if ((n>=10) && (n<=20)) {
+			alert("OK c'est bon :p");
+		}
+
+
+
+}
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+            <h1>Mon super exo 5.2.a</h1>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code">
+                <h2>PSEUDO-CODE</h2>
+                <textarea>
+                    					
+Algorithme_Exercice_5_2_a                    
+                    
+Variables n numérique
+
+DEBUT
+
+	ECRIRE "Entrez un nombre entre 10 et 20"
+	LIRE n
+	
+	TANTQUE n<10 OU n>20 FAIRE
+		SI n<10 
+			ECRIRE "Plus grand !"
+		FINSI
+		SINON SI n>20
+			ECRIRE "Plus petit !"
+			LIRE n
+		FINSI
+	FIN TANTQUE
+			
+	SI n>=10 ET n<=20
+			ECRIRE "OK c'est bon :p"
+	FINSI
+			
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript">
+                <h2>JavaScript</h2>
+                <textarea>
+				
+function Exo_5_2_a_js() {
+
+    var n = prompt("Entrez un nombre entre 10 et 20");
+	
+	while ((n<10) || (n>20)) {
+	if (n<10) {
+			var n = prompt("Plus grand !");
+			} else if (n>20) {
+			var n = prompt("Plus petit !");
+			} 
+		}
+			
+	if ((n>=10) && (n<=20)) {
+			alert("OK c'est bon :p");
+		}
+
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_2_a_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php">
+                <h2>JQuery</h2>
+                <textarea>
+
+function Exo_5_2_a_jquery() {
+
+    var n = prompt("Entrez un nombre entre 10 et 20");
+	
+	while ((n<10) || (n>20)) {
+	if (n<10) {
+			var n = prompt("Plus grand !");
+			} else if (n>20) {
+			var n = prompt("Plus petit !");
+			} 
+		}
+			
+	if ((n>=10) && (n<=20)) {
+			alert("OK c'est bon :p");
+		}
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_2_a_jquery()">Tester mon JQuery</button>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

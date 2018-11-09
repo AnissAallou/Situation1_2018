@@ -1,0 +1,183 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 5.3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 5.3">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script>
+function Exo_5_3_js() {
+
+
+	var n =+ prompt("Entrez un nombre :");
+	var i = 0;
+	alert("Les 10 nombres suivants sont : ");
+
+	while (i < 10) {
+		i = i + 1;
+		alert(n + i);
+	}
+
+
+}
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 5.3</h1>
+			</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:120px;">Énoncé : Ecrire un algorithme qui demande un nombre<br> de départ, et qui ensuite affiche les dix nombres suivants.<br>
+			Par exemple, si l'utilisateur entre le nombre 17,<br>
+			le programme affichera les nombres de 18 à 27.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:220px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_5_3
+
+Variables n, i numérique
+
+DEBUT
+
+	ECRIRE "Entrez un nombre :"
+	LIRE n
+
+	i = 0;
+
+	ECRIRE "Les 10 nombres suivants sont :"
+
+	TANTQUE i < 10 FAIRE
+		i = i + 1
+		ECRIRE n + i
+	FINTANTQUE
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_5_3_js() {
+
+
+	var n =+ prompt("Entrez un nombre :");
+	var i = 0;
+	alert("Les 10 nombres suivants sont : ");
+
+	while (i < 10) {
+		i = i + 1;
+		alert(n + i);
+	}
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_3_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php" class="center">
+                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+< ? php
+
+$n = $_POST["n"];
+
+
+
+	$i1 = $n + 1;
+	$i2 = $i1 + 1;
+	$i3 = $i2 + 1;
+	$i4 = $i3 + 1;
+	$i5 = $i4 + 1;
+	$i6 = $i5 + 1;
+	$i7 = $i6 + 1;
+	$i8 = $i7 + 1;
+	$i9 = $i8 + 1;
+	$i10 = $i9 + 1;
+
+    $sMessage1 = "$i1";
+    $sMessage2 = "$i2";
+    $sMessage3 = "$i3";
+    $sMessage4 = "$i4";
+    $sMessage5 = "$i5";
+    $sMessage6 = "$i6";
+    $sMessage7 = "$i7";
+    $sMessage8 = "$i8";
+    $sMessage9 = "$i9";
+    $sMessage10 = "$i10";
+
+
+
+
+require "exo_5_3.html";
+
+? >
+
+				</textarea>
+
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_5_3.php">
+
+
+					<h4>Entrez un nombre :</h4>
+					<input type="text" name="n" id="n" value="" size="10" maxlength="10" style="margin-left:  610px;"">
+					<h4>Les 10 nombres suivants sont : <?= $sMessage1; ?>, <?= $sMessage2; ?>, <?= $sMessage3; ?>, <?= $sMessage4; ?>, <?= $sMessage5; ?>,
+									   <?= $sMessage6; ?>, <?= $sMessage7; ?>, <?= $sMessage8; ?>, <?= $sMessage9; ?>, <?= $sMessage10; ?>. </h4>
+
+
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 2.3</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 2.3">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="/js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script type="text/javascript">
+function Exo_2_3_js() {
+
+    var prixHT, nbArt, TVA, TTC;
+
+    prixHT = prompt("Quel est le prix de votre article HT ?");
+
+    nbArt = prompt("Combien d'articles avez-vous achete ?");
+
+    TVA = prompt("Quel est le taux de la TVA applique ?");
+
+    TTC = [prixHT * (1 + (TVA / 100))] * nbArt;
+
+    alert(" le prix de vos achats est de " + TTC);
+
+}
+
+
+</script>
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 2.3</h1>
+		</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:120px;">Enonce : Ecrire un programme qui lit le prix HT d'un article, le nombre d'articles et le taux de TVA, et qui fournit le prix total TTC correspondant. Faire en sorte que des libelles apparaissent clairement.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_2_3
+
+
+Variables prixHT, nbArt, TVA, TTC Numerique
+
+
+DEBUT
+
+	ECRIRE "Quel est le prix de votre article HT ?"
+
+	LIRE prixHT
+
+	ECRIRE "Combien d'articles avez-vous achete ?"
+
+	LIRE nbArt
+
+	ECRIRE "Quel est le taux de la TVA applique ?"
+
+	lIRE TVA
+
+	TTC <- [prixHT *(1+(tVA/100))] * nbArt
+
+	ECRIRE " le prix de vos achats est de ", TTC
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_2_3_js() {
+
+    var prixHT, nbArt, TVA, TTC;
+
+    prixHT = prompt("Quel est le prix de votre article HT ?");
+
+    nbArt = prompt("Combien d'articles avez-vous achete ?");
+
+    TVA = prompt("Quel est le taux de la TVA applique ?");
+
+    TTC = [prixHT * (1 + (TVA / 100))] * nbArt;
+
+    alert(" le prix de vos achats est de " + TTC);
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_2_3_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+
+		<div id="div_php" class="center">
+		<h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+< ? php
+
+$prixHT = $_POST["prixHT"];
+$nbArt = $_POST["nbArt"];
+$TVA = $_POST["TVA"];
+$TTC = ($prixHT * (1 + ($TVA/100))) * $nbArt;
+
+
+
+$sMessage="Le prix de vos achats est de : " . $TTC;
+
+require "exo_2_3.html";
+
+? >
+				</textarea>
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_2_3.php">
+
+
+					<h4>Entrez un prix HT :</h4>
+					<input type="text" name="prixHT" id="prixHT" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Entrez un nombre d'articles :</h4>
+					<input type="text" name="nbArt" id="nbArt" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Entrez une TVA :</h4>
+					<input type="text" name="TVA" id="TVA" value="" size="10" maxlength="10" style="margin-left: 635px;">
+					<h4>Resultat : <?= $sMessage; ?></h4>
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

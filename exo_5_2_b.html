@@ -1,0 +1,218 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 5.2.b</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 5.2.b">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="../css/algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_5_2_b_js() {
+
+	var nombre_hasard = Math.floor(Math.random() * 101);
+	var n = prompt("Entrez un nombre au hasard compris entre 1 et 100");
+	
+	
+	while ((n<1) || (n>100)) {
+		var n = prompt("Entre 1 et 100 je t'ai dit :D");
+	}
+	
+	while (n > nombre_hasard) {
+		var n = prompt("Plus petit");
+	}
+	
+	while (n < nombre_hasard) {
+		var n = prompt("Plus grand");
+	}
+	
+	if (n == nombre_hasard) {
+		alert("GG t'as géré :p");
+	}
+		
+
+}
+</script>
+
+<script>
+function Exo_5_2_b_jquery() {
+
+    var nombre_hasard = Math.floor(Math.random() * 101);
+	var n = prompt("Entrez un nombre au hasard compris entre 1 et 100");
+	
+	
+	while ((n<1) || (n>100)) {
+		var n = prompt("Entre 1 et 100 je t'ai dit :D");
+	}
+	
+	while (n > nombre_hasard) {
+		var n = prompt("Plus petit");
+	}
+	
+	while (n < nombre_hasard) {
+		var n = prompt("Plus grand");
+	}
+	
+	if (n == nombre_hasard) {
+		alert("GG t'as géré :p");
+	}
+
+
+
+}
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+            <h1>Mon super exo 5.2.b</h1>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code">
+                <h2>PSEUDO-CODE</h2>
+                <textarea>
+                    					
+Algorithme_Exercice_5_2_b                  
+                    
+Variables n, nombre_hasard numériques
+
+DEBUT
+
+	ECRIRE "Entrez un nombre au hasard compris entre 1 et 100";
+	LIRE n
+	
+	nombre_hasard = RANDOM[1..100]
+	LIRE nombre_hasard
+	
+	
+	TANTQUE n<1 OU n>100 FAIRE
+		ECRIRE "Entre 1 et 100 je t'ai dit :D"
+	FINTANTQUE
+	
+	TANTQUE n > nombre_hasard FAIRE
+		ECRIRE "Plus petit"
+	FINTANTQUE
+	
+	TANTQUE n < nombre_hasard FAIRE
+		ECRIRE "Plus grand"
+	FINTANTQUE
+	
+	SI n == nombre_hasard ALORS
+		ECRIRE "GG t'as géré :p"
+	FINSI
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript">
+                <h2>JavaScript</h2>
+                <textarea>
+				
+function Exo_5_2_b_js() {
+
+	var nombre_hasard = Math.floor(Math.random() * 101);
+	var n = prompt("Entrez un nombre au hasard compris entre 1 et 100");
+	
+	
+	while ((n<1) || (n>100)) {
+		var n = prompt("Entre 1 et 100 je t'ai dit :D");
+	}
+	
+	while (n > nombre_hasard) {
+		var n = prompt("Plus petit");
+	}
+	
+	while (n < nombre_hasard) {
+		var n = prompt("Plus grand");
+	}
+	
+	if (n == nombre_hasard) {
+		alert("GG t'as géré :p");
+	}
+		
+
+}
+				</textarea>
+                
+				<form name="myExoForm" id="myExoForm" method="POST" action="exo_5_2_b_1.php">
+                <div>
+                    <?= $sMessage; ?> Saisir un nombre entre 1 et 100 :
+                        <input type="text" name="iReponseUser" id="iReponseUser" value=" " size="3" maxlength="3">
+                </div>
+                <div id="div_result">
+                </div>
+                <button onClick="exo_5_2_b_js(); return false; ">JS PROMPT</button>
+                <button onClick="exo_5_2_b_js_form(); return false; ">JS FORM</button>
+                <button onClick="exo_5_2_b_jquery_form(); return false; ">JQUERY</button>
+                <button type="submit ">PHP</button>
+            </form>
+				<div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_2_b_js()">Tester mon JS</button>
+					
+                </div>
+            </div>
+            <div id="div_php">
+                <h2>JQuery</h2>
+                <textarea>
+
+function Exo_5_2_b_jquery() {
+
+    var nombre_hasard = Math.floor(Math.random() * 101);
+	var n = prompt("Entrez un nombre au hasard compris entre 1 et 100");
+	
+	
+	while ((n<1) || (n>100)) {
+		var n = prompt("Entre 1 et 100 je t'ai dit :D");
+	}
+	
+	while (n > nombre_hasard) {
+		var n = prompt("Plus petit");
+	}
+	
+	while (n < nombre_hasard) {
+		var n = prompt("Plus grand");
+	}
+	
+	if (n == nombre_hasard) {
+		alert("GG t'as géré :p");
+	}
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_5_2_b_jquery()">Tester mon JQuery</button>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

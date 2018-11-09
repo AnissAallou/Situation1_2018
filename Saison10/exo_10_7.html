@@ -1,0 +1,348 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.7</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.7">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="../css/algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_10_7_js() {
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+
+var Nouveau.Nom = prompt("Entrez le nom : ");
+var Nouveau.Prénom = prompt("Entrez le prénom : ");
+var Nouveau.Tel = prompt("Entrez le téléphone : "); 
+var Nouveau.Mail = prompt("Entrez le mail : ");
+	
+window.open("Adresse.txt", 1);
+var i = -1;
+var insert = false;
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Insert = true;
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes[i] = MonPote;
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+for(j=0; j<=i; j++) {
+  EcrireFichier 1, MesPotes[j];
+  }
+close(1);
+	
+
+
+}	    				
+</script>
+
+<script>
+function Exo_10_7_jquery()
+{
+
+	var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+				
+	
+}
+
+
+
+
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center">
+            <h1>Mon super exo 10.7</h1>
+			</div>
+<div class="center">
+			<h1 style="width:480px; height:150px;">
+Soient Toto.txt et Tata.txt deux fichiers dont<br> les enregistrements ont la même structure.<br>
+ Ecrire un algorithme qui recopie tout le fichier<br> Toto dans le fichier Tutu, puis à sa suite, tout<br> le fichier Tata (concaténation de fichiers).
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1>PSEUDO-CODE</h1>
+                <textarea>
+   
+
+
+Algorithme_Exercice_10_7
+
+Variable Lig en Caractère
+Début
+Ouvrir "Tutu.txt" sur 1 pour Ajout
+Ouvrir “Toto.txt” sur 2 pour Lecture
+Tantque Non EOF(2)
+  LireFichier 2, Lig
+  EcrireFichier 1, Lig
+FinTantQue
+Fermer 2
+Ouvrir “Tata.txt” sur 3 pour Lecture
+Tantque Non EOF(3)
+  LireFichier 3, Lig
+  EcrireFichier 1, Lig
+FinTantQue
+Fermer 3
+Fermer 1
+Fin
+	
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1>JavaScript</h1>
+                <textarea>
+				
+			
+function Exo_10_7_js() {
+
+		var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+	
+
+				
+	
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_7_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+            <div id="div_jquery" class="center">
+                <h1>JQuery</h1>
+                <textarea>
+
+function Exo_10_7_jquery() {
+
+	
+		var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+
+
+	
+	
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_7_jquery();">Tester mon JQuery</button>
+                    
+                </div>
+            </div>
+      <div id="div_php" class="center">
+                <h1>PHP</h1>
+                <textarea>
+
+< ? php 
+
+            $sMessage="";
+            $i=0;
+            $naruto = [1, 3, 5, 7, 9];
+            $sasuke = [2, 4, 6, 8, 10];
+            $narutosasuke = [];
+            $iStop =0;
+ 
+            while (((count($naruto) + count($sasuke)) > 0)) {
+                $iStop++;
+                error_log("NB naruto = " . count($naruto) . " | NB sasuke = " . count($sasuke));
+                if (($naruto[0] > $sasuke[0]) && (isset($naruto[0])) && (isset($sasuke[0])))  {
+                    $narutosasuke[$i] = $sasuke[0];
+                    array_splice($sasuke,0, 1);
+                    
+                } else if (($naruto[0] < $sasuke[0]) && (isset($naruto[0])) && (isset($sasuke[0]))) {
+                    $narutosasuke[$i] = $naruto[0];
+                     array_splice($naruto,0, 1);
+                   
+                } else if (count($naruto) == 0) {
+                    $narutosasuke[$i] = $sasuke[0];
+                     array_splice($sasuke,0, 1);
+                   } else {
+                    $narutosasuke[$i] =$naruto[0];
+                   array_splice($naruto,0, 1);
+                }
+                $i++;
+
+            }
+          $sMessage=implode("|",$narutosasuke);
+        
+
+
+     require "exo_10_7.html";
+
+? >
+				
+				
+				
+				
+				
+				</textarea>
+
+
+			
+			
+				<form name="fusion" id="fusion" method="post" action="exo_10_7.php">
+							<div class="center" style="margin-left:-100px;">
+            <h1><span><?= $sMessage; ?></span></h1>
+			</div>
+					<button class='btn_green' type="submit">Fusion des 2 fichiers</button>
+					<input type="hidden" name="exec" id="exec" value=" ">
+				</form>
+	<div>
+	<div class="center" style="margin-left:-100px;">
+			
+				<br>
+				<br>
+				<big>
+					<h1><u>Fichier Toto.txt</u>
+					<br>
+					</big>
+					Marco le Phénix
+					<br>
+					marco@hotmail.fr             
+					<br>
+					<br>
+					Portgas D. Ace
+					<br>
+					portgas.ace@mail.com
+					<br>
+					<br>
+					Jozu
+					<br>
+					jozu.fake.mail
+					<br>
+					<br>
+					<big>
+						<u>Fichier Tata.txt</u>
+						<br>
+					</big>
+					Shanks
+					<br>
+					shanks@fausse.com    
+					<br>
+					<br>
+					Edward Newgate
+					<br>
+					newgate@gmail.com              
+					<br>
+					<br>
+					Jozu
+					<br>
+					jozu.mail.test
+					<br>
+					<br>
+
+
+					
+					</div>
+				</div>
+			    </div>
+				
+
+
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

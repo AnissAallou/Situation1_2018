@@ -1,0 +1,252 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 7.5</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 7.5">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_7_5_js() {
+
+    var dico = ["hokage", "itachi", "naruto", "sakura", "sarutobi", "shippuden", "tsunade"];
+    var min = 0;
+    var max = dico.length-1;
+    var entier;
+    var retour = 0;
+
+    var user = prompt("Dis un mot qui se rapporte à Naruto :");
+
+    while (retour == 0) {
+        entier = Math.ceil((max + min)/2);
+
+        if (user == dico[entier]) {
+            retour = 1;
+        }else if ((max - min) <= 1) {
+            retour = 2;
+        }else if (user > dico[entier]) {
+            min = entier+1;
+        }else if (user < dico[entier]) {
+            max = entier-1;
+        }
+
+    }
+    retour == 1 ? alert("C'est bien un mot du dico") : alert("Ce n'est pas un mot du dico");
+
+
+
+	}
+
+
+
+
+
+
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 7.5</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:90px;">Ecrivez l'algorithme qui recherche un mot saisi au clavier dans un dictionnaire. Le dictionnaire est supposé être codé
+dans un tableau préalablement rempli et trié.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_7_5
+
+
+
+
+variables user, min, max, entier, retour, Tableau dico
+
+DEBUT
+
+	dico <- ("hokage", "itachi", "naruto", "sakura", "sarutobi", "shippuden", "tsunade")
+
+    ECRIRE "Dis un mot qui se rapporte à Naruto :"
+    LIRE user
+
+    TANTQUE retour == 0
+
+        entier <- entier((max-min) / 2)
+
+        SI user == dico(entier) ALORS
+            retour <- 1
+        FINSI
+
+        SINONSI (iMax - iMin) <= 1 ALORS
+            retour <- 2
+        FINSI
+
+        SINONSI user > dico(entier) ALORS
+            min <- entier + 1
+        FINSI
+
+        SINONSI user < dico(entier) ALORS
+            max <- entier - 1
+        FINSI
+
+    FINTANTQUE
+
+    SI retour == 1 ALORS
+        ECRIRE "Tranquille il y est"
+    SINON
+        ECRIRE "Non il y en a pas désolé"
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_7_5_js() {
+
+
+    var dico = ["hokage", "itachi", "naruto", "sakura", "sarutobi", "shippuden", "tsunade"];
+    var min = 0;
+    var max = dico.length-1;
+    var entier;
+    var retour = 0;
+
+    var user = prompt("Dis un mot qui se rapporte à Naruto :");
+
+    while (retour == 0) {
+        entier = Math.ceil((max + min)/2);
+
+        if (user == dico[entier]) {
+            retour = 1;
+        }else if ((max - min) <= 1) {
+            retour = 2;
+        }else if (user > dico[entier]) {
+            min = entier+1;
+        }else if (user < dico[entier]) {
+            max = entier-1;
+        }
+
+    }
+    retour == 1 ? alert("Tranquille il y est") : alert("Non il y en a pas désolé");
+
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_7_5_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+ <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+        $sMessage="";
+         $dico = array("naruto");
+          $max = 4 - 1;
+         $min = 0;
+          $test = ($min + $max) / 2;
+          $flag = false;
+
+            $iSaisie = $_POST['iReponseUser'];
+            do {
+
+                if ($iSaisie < $dico[$test]) {
+                    $max = $test - 1;
+                } else {
+                    $min = $test + 1;
+                }
+                $flag = $iSaisie && $dico[$test];
+
+            } while ($flag = false);
+
+            if ($iSaisie == $dico[$test]) {
+             $sMessage =("C'est bien un mot du dico");
+            } else {
+             $sMessage =("Il n'est pas dans le dico");
+
+            }
+     require "exo_7_5.html";
+? >
+
+
+
+
+
+				</textarea>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_7_5.php">
+
+			<div class="center" style="margin-left:-250px;">
+            <div class="message">
+
+
+                <h1>le tableau</h1>
+
+
+            </div>
+			</div>
+
+
+
+            <input type="text" name="iReponseUser" id="iReponseUser" value="" size="10" maxlength="10" style="margin-left:520px;">
+            <input type="hidden" name="dico" id="dico" value="" size="3" maxlength="3">
+            <input type="hidden" name="iNombre" id="iNombre" value="" size="3" maxlength="3">
+
+
+
+            <button type="submit">php</button>
+
+			<div class="center" style="margin-left:-250px;">
+				<h1><span> <?= $sMessage; ?>  </span></h1>
+			</div>
+
+            </form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

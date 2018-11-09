@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 6.5</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 6.5">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+function Exo_6_5_js() {
+
+	var tab = []
+
+	var k;
+
+	tab[0] = -1;
+
+
+	for(k=1; k<=7; k++) {
+		tab[k] = tab[k-1] + 2;
+		alert(tab[k]);
+	}
+
+
+}
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 6.5</h1>
+		</div>
+		<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:445px;">Que produit l’algorithme suivant ?<br><br>
+			Tableau Nb(6) en Entier<br>
+			Variables i, k en Entier<br>
+			Début<br>
+			N(0) ← 1<br>
+			Pour k ← 1 à 6<br>
+			N(k) ← N(k-1) + 2<br>
+			k Suivant<br>
+			Pour i ← 0 à 6<br>
+			Ecrire N(i)<br>
+			i suivant<br>
+			Fin<br><br>
+Peut-on simplifier cet algorithme avec le même résultat ?</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:500px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_6_5
+
+Variables k, Tableau tab numérique
+DEBUT
+
+	tab = []
+
+	var k
+
+	tab[0] = -1
+
+
+	POUR k allant de 1 à 7
+		tab[k] = tab[k-1] + 2
+		ECRIRE tab[k]
+	k Suivant
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_6_5_js() {
+
+
+	var tab = []
+
+	var k;
+
+	tab[0] = -1;
+
+
+	for(k=1; k<=7; k++) {
+		tab[k] = tab[k-1] + 2;
+		alert(tab[k]);
+	}
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_6_5_js()">Tester mon JS</button>
+                </div>
+            </div>
+<div = "div_php" style="margin-top:100px;" div class="center">
+					<form id="form_exo_php" method="POST" action="exo_6_5.php">
+					<input type="hidden" name="tab" id="tab">
+					<h1 style="margin-left:400px; width:510px;"><?php print_r($tab); ?></h1>
+					<button type="submit" style="margin-left: 625px;">PHP</button>
+				</form>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

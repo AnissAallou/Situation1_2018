@@ -1,0 +1,240 @@
+/* General statements */
+html, body {
+    margin: auto;
+    font: 12px Calibri, Helvetica, Arial;
+	width: calc(100% - 100px);
+	color: black;
+	background-color: black;
+	background-image: url(onepiece.jpg);
+    
+}
+
+header, nav, aside, footer, section {
+	/* border: 1px solid black; */
+
+}
+
+
+header {
+	margin-top: 30px;
+	height: 50px;
+	width: 100%;
+
+}
+
+
+
+h4 {
+	text-align: center;
+	color: white;
+}
+
+.center h1 {
+	text-align: center;
+	color: cyan;
+	 border: 3px blue groove;
+	 width: 200px;
+	 background:red;
+	 margin-left: 750px;
+
+}
+
+nav {
+	width: 100%;
+	height: 50px;
+	color:white;
+
+}
+
+
+
+#img table {
+	 border-collapse: collapse;
+}
+
+table
+{
+    border-collapse: collapse;
+}
+td, th /* Mettre une bordure sur les td ET les th */
+{
+    border: 1px solid orange;
+}
+
+#menu, #menu ul /* Liste */     
+{
+        padding : 0; /* pas de marge intérieure */
+        margin : 0; /* ni extérieure */
+        list-style : none; /* on supprime le style par défaut de la liste */
+        line-height : 21px; /* on définit une hauteur pour chaque élément */
+        text-align : center; /* on centre le texte qui se trouve dans la liste */
+}
+
+#menu /* Ensemble du menu */
+{
+        font-weight : bold; /* on met le texte en gras */
+        font-family : Arial; /* on utilise Arial, c'est plus beau ^^ */
+        font-size : 12px; /* hauteur du texte : 12 pixels */
+}
+
+#menu a /* Contenu des listes */
+{
+        display : block; /* on change le type d'élément, les liens deviennent des balises de type block */
+        padding : 0; /* aucune marge intérieure */
+        background : red; /* couleur de fond */        
+        color : black; /* couleur du texte */
+        text-decoration : none; /* on supprime le style par défaut des liens (la plupart du temps = souligné) */
+        width : 144px; /* largeur */
+}
+
+#menu li /* Elements des listes */      
+{ 
+        float : left; 
+        /* pour IE qui ne reconnaît pas "transparent" */
+        border-right : 1px solid #fff; /* on met une bordure blanche à droite de chaque élément */
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #menu li
+{
+        border-right: 1px solid transparent ; /* on met une bordure transparente à droite de chaque élément */
+}
+
+#menu li ul /* Sous-listes */
+{ 
+        position: absolute; /* Position absolue */
+        width: 144px; /* Largeur des sous-listes */
+        left: -999em; /* Hop, on envoie loin du champ de vision */
+}
+
+
+#menu li ul li /* Éléments de sous-listes */
+{
+        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+        border-top : 1px solid #fff; /* on met une bordure blanche en haut de chaque élément d'une sous liste */
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" */
+html>body #menu li ul li                
+{
+        border-top : 1px solid transparent; /* on met une bordure transparente en haut de chaque élément */
+}
+
+#menu li ul ul 
+{
+        margin    : -22px 0 0 144px ; /* On décale les sous-sous-listes pour qu'elles ne soient pas au dessus des sous-listes */ 
+        /* pour IE qui ne reconnaît pas "transparent" (comme précédemment) */
+        border-left     : 1px solid #fff ; /* Petite bordure à gauche pour ne pas coller ... */      
+}
+
+/* IE ne reconnaissant pas le sélecteur ">" ... je me répète ;-) */
+html>body #menu li ul ul                
+{
+        border-left     : 1px solid transparent ; /* on met une bordure transparente sur la gauche de chaque élément */
+}
+
+
+aside {
+}
+
+footer {
+}
+
+section {
+	width: 100%;
+}
+
+textarea {
+	height: 500;
+}
+
+
+h1 {
+	text-align: center;
+	color: cyan;
+	 border: 3px blue groove;
+}
+
+h2 {
+	text-align: center;
+}
+
+section div {
+	width: 100%;
+	float: left;
+}
+
+section div textarea {
+	width: 95%;
+	height: 500px;
+}
+
+button {
+	padding: 10px 20px; /* génère de l'espace autour du contenu d'un élément, à l'intérieur des limites définies */
+	text-decoration: none;
+	font-weight: bold;
+	border-radius: 10px 10px 10px 10px;
+	cursor: pointer;
+}
+
+.btn_red {
+	background-color: red;
+	color: white;
+	border: 2px solid red;
+}
+
+.btn_red:hover {
+	background-color: white;
+	color: red;
+    transition-duration: 1s;
+}
+
+.btn_green {
+	background-color: red;
+	color: yellow;
+	border: 2px solid blue;
+}
+
+.btn_green:hover {
+	background-color: yellow;
+	color: red;
+    transition-duration: 1s; /* définit le nombre de secondes que doit durer l'animation */
+}
+
+.div_center {
+	width: 100%;
+	text-align: center;
+}
+
+
+label { /* définit une étiquette pour un élément */
+	color: white;
+}
+/* Tablettes 'n' Mobiles */
+@media only screen and (max-width: 1024px) {
+}
+
+@media only screen and (max-width: 960px) {
+}
+
+@media only screen and (max-width: 800px) {
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 380px) {
+}
+
+@media only screen and (max-width: 320px) {
+}
+
+/* IE10+ CSS */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)	{
+}
+
+/* IE Edge 12+ CSS */ 
+@supports (-ms-accelerator:true) {
+}
+
+

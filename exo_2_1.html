@@ -1,0 +1,151 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 2.1</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 2.1">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script>
+function Exo_2_1_js() {
+
+    var valeur, double;
+    var valeur = 231;
+
+    var double = valeur * 2;
+
+    alert(double);
+
+
+
+}
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 2.1</h1>
+		</div>
+								<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:245px;">Énoncé : Quel résultat produit le programme suivant ?
+				<br>Variables val, double numériques<br>
+				    Début<br>
+					Val ← 231<br>
+					Double ← Val * 2<br>
+					Ecrire Val<br>
+					Ecrire Double<br>
+					Fin </h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_2_1
+
+Variables val, double numériques
+DEBUT
+	Val ← 231
+	Double ← Val * 2
+	ECRIRE Val
+	ECRIRE Double
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_2_1_js() {
+
+    var valeur, double;
+    var valeur = 231;
+
+    var double = valeur * 2;
+
+    alert(double);
+
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_2_1_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+		<div id="div_php" class="center">
+				<h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+if(isset($_POST["valeur"])) {
+
+		$valeur = $_POST["valeur"];
+		$double = $valeur * 2;
+
+}
+
+$sMessage="Valeur double : " . $double;
+
+require "exo_2_1.html";
+
+? >
+				</textarea>
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_2_1.php">
+
+
+					<h4>Entrez une valeur :</h4>
+					<input type="text" name="valeur" id="valeur" value="" size="3" maxlength="10" style="margin-left: 635px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

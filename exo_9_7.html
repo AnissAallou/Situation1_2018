@@ -1,0 +1,173 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 9.7</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 9.7">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_9_7_js() {
+
+
+
+var n = prompt("Entrez votre nombre : ");
+
+if((n/2) == parseInt(n/2)) {
+  alert("Ce nombre est pair");
+} else {
+  alert("Ce nombre est impair");
+}
+
+
+
+
+
+
+}
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 9.7</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:120px;">
+Ecrivez un algorithme qui demande un nombre entier<br> à l’utilisateur. L’ordinateur affiche ensuite le message<br>
+"Ce nombre est pair" ou "Ce nombre est impair"<br> selon le cas.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:200px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_9_7
+
+Variables n numérique
+
+DEBUT
+
+	ECRIRE "Entrez votre nombre : "
+	LIRE n
+
+	SI n/2 == ent(n/2) ALORS
+	  ECRIRE "Ce nombre est pair"
+	SINON
+	  ECRIRE "Ce nombre est impair"
+	FINSI
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+
+function Exo_9_7_js() {
+
+	var n = prompt("Entrez votre nombre : ");
+
+	if((n/2) == parseInt(n/2)) {
+	  alert("Ce nombre est pair");
+	} else {
+	  alert("Ce nombre est impair");
+	}
+
+
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_9_7_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+
+      <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+$n = $_POST["n"];
+
+if (($n%2 == 1) || ($n%2 == -1)) {
+   $sMessage = "Ce nombre est impair";
+ } else {
+   $sMessage = "Ce nombre est pair";
+}
+
+     require "exo_9_7.html";
+
+? >
+
+
+
+
+
+				</textarea>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_9_7.php">
+	 <div class="center">
+		 <h1 style="margin-left:650px;">Entrez votre nombre :</h1>
+	 </div>
+
+  <input type="text" name="n" id="n" value="" size="10" maxlength="10" style="margin-left:705px;">
+	<button type="submit" style="margin-left:720px;">php</button>
+			<div class="center" style="margin-left:-100px;">
+            <h1><span> <?= $sMessage; ?>  </span></h1>
+			</div>
+
+
+
+            </form>
+			    </div>
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

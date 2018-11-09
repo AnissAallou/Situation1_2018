@@ -1,0 +1,203 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 4.8</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 4.8">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+<script>
+
+function Exo_4_8_js() {
+
+    var j, m, a, B1, B2, B3, B4;
+
+	j = +prompt("Entrez le numéro du jour");
+	m = +prompt("Entrez le numéro du mois");
+	a = +prompt("Entrez l'année");
+
+	var bissextile = ((a % 4) == 0 && ((a % 100) != 0 || (a % 400) == 0));
+	B1 = ((m == 1) ^ (m == 3) ^ (m == 5) ^ (m == 7) ^ (m == 8) ^ (m == 10) ^ (m == 12)) && ((j >= 1) && (j <= 31));
+	B2 = ((m == 4 ^ m == 6 ^ m == 9 ^ m == 11) && (j >= 1 && j <= 30));
+	B3 = ((m == 2 && bissextile) && (j >= 1 && j <= 29));
+	B4 = ((m == 2) && (j >= 1 && j <= 28));
+
+	if (B1 || B2 || B3 || B4) {
+		alert("date valide");
+	} else {
+		alert("date invalide");
+	}
+
+}
+
+</script>
+
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 4.8</h1>
+			</div>
+						<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:480px;">Énoncé : Ecrivez un algorithme qui a près avoir demandé un numéro de jour, de mois et d'année à l'utilisateur, renvoie s'il s'agit ou non d'une date valide.<br><br>
+Cet exercice est certes d’un manque d’originalité affligeant, mais après tout, en algorithmique comme ailleurs, il faut connaître ses classiques ! Et quand on a fait cela une fois dans sa vie, on apprécie pleinement l’existence d’un type numérique « date » dans certains langages…).<br><br>
+Il n'est sans doute pas inutile de rappeler rapidement que<br> le mois de février compte 28 jours, sauf si l’année est bissextile, auquel cas il en compte 29. L’année est<br> bissextile si elle est divisible par quatre. Toutefois, les années divisibles par 100 ne sont pas bissextiles, mais les<br> années divisibles par 400 le sont.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:500px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+Algorithme_Exercice_4_8
+
+
+Variables j, m, a en Numérique, B1, B2, B3, B4 en Booleen
+
+DEBUT
+
+	ECRIRE "Entrez le numéro du jour"
+	LIRE j
+
+	ECRIRE "Entrez le numéro du mois"
+	LIRE m
+
+	ECRIRE "Entrez l'année"
+	LIRE a
+
+
+
+    bissextile = (a dp 4 == 0) ET (a dp 100 != 0) OU (a % 400) == 0;
+	B1 = ((m == 1) XOR (m == 3) XOR (m == 5) XOR (m == 7) XOR (m == 8) XOR (m == 10) XOR (m == 12)) ET ((j >= 1) ET (j <= 31));
+	B2 = ((m == 4 XOR m == 6 XOR m == 9 XOR m == 11) ET (j >= 1 ET j <= 30));
+	B3 = ((m == 2 ET bissextile) ET (j >= 1 ET j <= 29));
+	B4 = ((m == 2) ET (j >= 1 ET j <= 28));
+
+	SI (B1 || B2 || B3 || B4) {
+		alert("date valide");
+	FINSI
+
+	SINON
+		alert("date invalide");
+	FINSI
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_4_8_js() {
+
+var j, m, a, B1, B2, B3, B4;
+
+j = +prompt("Entrez le numéro du jour");
+m = +prompt("Entrez le numéro du mois");
+a = +prompt("Entrez l'année");
+
+var bissextile = ((a % 4) == 0 && ((a % 100) != 0 || (a % 400) == 0));
+B1 = ((m == 1) ^ (m == 3) ^ (m == 5) ^ (m == 7) ^ (m == 8) ^ (m == 10) ^ (m == 12)) && ((j >= 1) && (j <= 31));
+B2 = ((m == 4 ^ m == 6 ^ m == 9 ^ m == 11) && (j >= 1 && j <= 30));
+B3 = ((m == 2 && bissextile) && (j >= 1 && j <= 29));
+B4 = ((m == 2) && (j >= 1 && j <= 28));
+
+if (B1 || B2 || B3 || B4) {
+			alert("date valide");
+	} else {
+			alert("date invalide");
+		}
+}
+
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_4_8_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php" class="center">
+                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+	$j = $_POST["jour"];
+	$m = $_POST["mois"];
+	$a = $_POST["annee"];
+
+	$bissextile = (($a % 4) == 0 && (($a % 100) != 0 || ($a % 400) == 0));
+    $B1 = (($m == 1) ^ ($m == 3) ^ ($m == 5) ^ ($m == 7) ^ ($m == 8) ^ ($m == 10) ^ ($m == 12)) && (($j >= 1) && ($j <= 31));
+	$B2 = (($m == 4 ^ $m == 6 ^ $m == 9 ^ $m == 11) && ($j >= 1 && $j <= 30));
+	$B3 = (($m == 2 && $bissextile) && ($j >= 1 && $j <= 29));
+	$B4 = (($m == 2) && ($j >= 1 && $j <= 28));
+
+	if ($B1 || $B2 || $B3 || $B4) {
+		$sMessage = "date valide";
+	} else {
+		$sMessage = "date invalide";
+	}
+
+require "exo_4_8.html";
+
+? >
+				</textarea>
+
+
+			<form name="myExoForm" id="myExoForm" method="POST" action="exo_4_8.php">
+
+
+					<h4>Entrez le numéro du jour :</h4>
+					<input type="text" name="jour" id="jour" value="" size="10" maxlength="10" style="margin-left: 610px;">
+					<h4>Entrez le numéro du mois :</h4>
+					<input type="text" name="mois" id="mois" value="" size="10" maxlength="10" style="margin-left: 610px;">
+					<h4>Entrez l'année :</h4>
+					<input type="text" name="annee" id="annee" value="" size="10" maxlength="10" style="margin-left: 610px;">
+					<h4>Résultat : <?= $sMessage; ?></h4>
+
+
+				<button type="submit" style="margin-left: 625px;">PHP</button>
+			</form>
+			</div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

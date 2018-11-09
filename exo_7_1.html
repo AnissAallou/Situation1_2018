@@ -1,0 +1,226 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 7.1</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 7.1">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="../js/exercice.js"></script>
+    <!-- CODE JAVASCRIPT  et jQuery -->
+
+<style>
+	table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront coll�es (plus joli) */
+}
+td
+{
+    border: 1px solid cyan;
+}
+</style>
+    <script type="text/javascript">
+	function Exo_7_1_js() {
+
+    var tab = [];
+    var i, j;
+    var k = 1;
+    var number, n;
+    var suivant = true;
+
+    n =+ prompt("Combien de valeurs voulez-vous entrer ?");
+
+    number =+ prompt("Entrez la valeur n°1");
+    tab[0] = number;
+
+    for (i=1; i<n; i++) {
+        number =+ prompt("Entrez la valeur n°"+ (i+1) +" :");
+        j = tab.length;
+
+        while (tab[j-1]>number) {
+            tab[j] = tab[j-1];
+            j--;
+        }
+        tab[j] = number;
+    }
+
+
+    while (k < (tab.length) && suivant==true) {
+        (tab[k]!=(tab[k-1])+1) ? suivant = false : "";
+        k++;
+    }
+    suivant ? alert("Valeurs dans l'ordre : "+ tab +"\nLes entiers sont cons�cutifs.") : alert("Valeurs : "+ tab +"\nLes entiers sont non-consécutifs.");
+}
+
+
+
+
+
+	</script>
+
+
+</head>
+
+<body>
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Deconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+    <div id="page">
+        <!-- Ent�te de la zone consid�r�e -->
+        <header>
+			<div class="center" style="margin-left:-200px;">
+				<h1>Mon super exo 7.1</h1>
+			</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:550px; height:340px;">Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui les range au fur et a mesure dans un tableau. Le programme, une fois la saisie terminee, doit dire si les elements du tableau sont tous consecutifs ou non.
+Par exemple, si le tableau est :
+<table>
+<tr>
+<td>12</td>
+<td>13</td>
+<td>14</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+</tr>
+</table>
+ses elements sont tous consecutifs. En revanche, si le tableau est :
+<table>
+<tr>
+<td>9</td>
+<td>10</td>
+<td>11</td>
+<td>15</td>
+<td>16</td>
+<td>17</td>
+<td>18</td>
+</tr>
+<table>
+ses elements ne sont pas tous consecutifs.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les �-cot�s de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" class="center">
+                <h1 style="margin-left:200px;">PSEUDO-CODE</h1>
+                <textarea>
+Algorithme_7_1
+
+variables i, j, k, n, number, suivant, Tableau tab Numerique
+
+DEBUT
+
+	k <- 1
+    ECRIRE "Combien de valeurs voulez-vous entrer ?"
+	LIRE n
+
+	ECRIRE "Entrez la valeur numero 1"
+	LIRE number
+    tab(0) <- number
+
+    POUR i de 1 a n
+        ECRIRE "Entrez la valeur numero", i+1
+        LIRE number
+
+        j = tab.length
+
+        TANTQUE tab[j-1] > number FAIRE
+            tab[j] = tab[j-1]
+            j--
+        FINTANTQUE
+
+        tab[j] = number
+
+    i suivant
+
+    TANTQUE k < tab.length AND suivant <- Vrai FAIRE
+
+        SI tab(k) != (tab(k-1))+1 ALORS
+            suivant <- Faux
+            k++
+        FINSI
+
+    FINTANTQUE
+
+    SI suivant == Faux ALORS
+        ECRIRE "Valeurs dans l'ordre : ", tab, "Les entiers sont consecutifs."
+    SINON
+        ECRIRE "Valeurs dans l'ordre : ", tab, "Les entiers sont non-consecutifs."
+	FINSI
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:200px;">JavaScript</h1>
+                <textarea>
+function Exo_7_1_js() {
+
+var tab = [];
+var i, j;
+var k = 1;
+var number, n;
+var suivant = true;
+
+n =+ prompt("Combien de valeurs voulez-vous entrer ?");
+
+number =+ prompt("Entrez la valeur n°1");
+tab[0] = number;
+
+ for (i=1; i<n; i++) {
+ number =+ prompt("Entrez la valeur n°"+ (i+1) +" :");
+ j = tab.length;
+
+ while (tab[j-1]>number) {
+		 tab[j] = tab[j-1];
+		  j--;
+		  }
+  tab[j] = number;
+ }
+
+
+ while (k < (tab.length) && suivant==true) {
+		  (tab[k]!=(tab[k-1])+1) ? suivant = false : "";
+	     k++;
+	    }
+	  suivant ? alert("Valeurs dans l'ordre : "+ tab +"\nLes entiers sont consécutifs.") : alert("Valeurs : "+ tab +"\nLes entiers sont non-consécutifs.");
+	}
+
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_7_1_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

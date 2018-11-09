@@ -1,0 +1,188 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 9.8</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 9.8">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_9_8_js() {
+
+	var Glup;
+	Glup = Math.random() * 2;
+	alert("Glup aléatoire entre 0 et 2 = " + Glup);
+	Glup = Math.random() * 2 - 1;
+	alert("Glup aléatoire entre -1 et 1 = " + Glup);
+	Glup = Math.random() * 0.30 + 1.35;
+	alert("Glup aléatoire entre -1.35 et 1.65 = " + Glup);
+	Glup = parseInt((Math.random() * 6)) + 1;
+	alert("Glup émule un dé à six faces = " + Glup);
+	Glup = Math.random() * 17 - 10.5;
+	alert("Glup aléatoire entre -10.5 et 6.5 = " + Glup);
+	Glup = parseInt(Math.random()*6) + parseInt(Math.random()*6) + 2;
+	alert("Glup émule la somme du jet simultané de deux dés à six faces = " + Glup);
+
+
+
+
+}
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 9.8</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:300px;">
+Ecrivez les algorithmes qui génèrent un Glup aléatoire<br> tel que …<br><br>
+ 0 =< Glup =< 2<br>
+ –1 =< Glup =< 1<br>
+ 1,35 =< Glup =< 1,65<br>
+ Glup émule un dé à six faces<br>
+ –10,5 =< Glup =< +6,5<br>
+ Glup émule la somme du jet simultané<br> de deux dés à six faces
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_9_8
+
+Variables i, j, k numérique
+Tableau naruto, sasuke, narutosasuke
+
+DEBUT
+
+	Glup <- rand() * 2
+	ECRIRE "Glup aléatoire entre 0 et 2 = ", Glup
+	Glup <- rand() * 2 - 1
+	ECRIRE "Glup aléatoire entre -1 et 1 = ", Glup
+	Glup <- rand() * 0.30 + 1.35
+	ECRIRE "Glup aléatoire entre -1.35 et 1.65 = ", Glup
+	Glup <- rand() * 6 + 1
+	ECRIRE "Glup émule un dé à six faces = " Glup
+	Glup <- rand() * 17 - 10.5
+	alert("Glup aléatoire entre -10.5 et 6.5 = ", Glup
+	Glup <- rand() * 6 + rand() * 6 + 2
+
+	ECRIRE "Glup émule la somme du jet simultané de deux dés à six faces = ", Glup
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+
+function Exo_9_8_js() {
+
+	var Glup;
+	Glup = Math.random() * 2;
+	alert("Glup aléatoire entre 0 et 2 = " + Glup);
+	Glup = Math.random() * 2 - 1;
+	alert("Glup aléatoire entre -1 et 1 = " + Glup);
+	Glup = Math.random() * 0.30 + 1.35;
+	alert("Glup aléatoire entre -1.35 et 1.65 = " + Glup);
+	Glup = parseInt((Math.random() * 6)) + 1;
+	alert("Glup émule un dé à six faces = " + Glup);
+	Glup = Math.random() * 17 - 10.5;
+	alert("Glup aléatoire entre -10.5 et 6.5 = " + Glup);
+	Glup = parseInt(Math.random()*6) + parseInt(Math.random()*6) + 2;
+	alert("Glup émule la somme du jet simultané de deux dés à six faces = " + Glup);
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_9_8_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+
+      <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+	$Glup1 = rand() * 2;
+	$Glup2 = rand() * 2 - 1;
+	$Glup3 = rand() * 0.30 + 1.35;
+	$Glup4 = intval((rand() * 6)) + 1;
+	$Glup5 = rand() * 17 - 10.5;
+	$Glup6 = intval(rand()*6) + intval(rand()*6) + 2;
+
+	$sMessage = "Glup aléatoire entre 0 et 2 = " . $Glup1 . "<br><br>Glup aléatoire entre -1 et 1 = " . $Glup2 . "<br><br>Glup aléatoire entre -1.35 et 1.65 = " . $Glup3 . "Glup émule un dé à six faces = " . $Glup4 . "<br><br>Glup aléatoire entre -10.5 et 6.5 = " . $Glup5 . "<br><br>Glup émule la somme du jet simultané de deux dés à six faces = " . $Glup6;
+
+     require "exo_9_8.html";
+
+? >
+
+
+
+
+
+				</textarea>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_9_8.php">
+
+
+            <button type="submit" style="margin-left:-500px;">php</button>
+			<div class="center" style="margin-left:-100px; margin-top:50px;">
+            <h1><span> <?= $sMessage; ?>  </span></h1>
+			</div>
+
+
+
+
+            </form>
+			    </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

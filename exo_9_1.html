@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 9.1</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 9.1">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_9_1_js() {
+
+	var a = 1;
+	var b = 2;
+	var c = 3;
+	var d;
+
+	a = Math.sin(b);
+	alert("a = sin(b) = " + a);  // OK //
+	a = Math.sin(a+b*c);
+	alert("a = sin(a+b*c) = " + Math.sin(a+b*c)); // OK //
+	b = Math.sin(a)- Math.sin(d);
+	alert("b = sin(a) - sin(d) = " + b); // d est une chaîne de caractère donc ça marche pas //
+	b=2; // si on remet pas b à 2, la prochaine équation c provoquera une erreur //
+	c = Math.sin(a/b); // à vérifier que b ne soit pas repris du résultat de l'opération précédente avec d la maudite variable en String //
+	alert("c = sin(a/b) = " + Math.sin(a/b)); // si b est différent de zéro tout marche sur des roulettes //
+	c = Math.cos(Math.sin(a));
+	alert("c = cos(sin(a) = " + c); // l'absence de parenthèse fermante à cos(sin(a) provoque une erreur //
+
+
+
+
+}
+</script>
+
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 9.1</h1>
+			</div>
+<div class="center" style="margin-left:-200px;">
+			<h1 style="width:580px; height:300px;">
+Parmi ces affectations (considérées indépendamment<br> les unes des autres), lesquelles provoqueront des erreurs,<br> et pourquoi ?<br><br>
+Variables A, B, C en Numérique<br>
+Variable D en Caractère<br>
+A ← Sin(B)<br>
+A ← Sin(A + B * C)<br>
+B ← Sin(A) – Sin(D)<br>
+C ← Sin(A / B) C ← Cos(Sin(A)
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+
+
+Algorithme_Exercice_9_1
+
+Variables A, B, C en Numérique
+Variable D en Caractère
+
+DEBUT
+
+A ← Sin(B)                     t'inquiète ça roule
+ECRIRE "A = Sin(B) = ", A
+
+A ← Sin(A + B * C)                                ça passe
+ECRIRE "a = Sin(A + B * C) = ", Sin(A + B * C)
+
+B ← Sin(A) – Sin(D)                  d est une chaîne de caractère donc ça marche pas
+ECRIRE "B = Sin(A) - Sin(A) = ", B
+
+C ← Sin(A / B) 							à vérifier que b ne soit pas repris du résultat de l'opération précédente avec d la maudite variable en String
+ECRIRE "C = Sin(A / B) = ", Sin(A / B)  si b est différent de zéro tout marche sur des roulettes
+
+C ← Cos(Sin(A)                  l'absence de parenthèse fermante à cos(sin(a) provoque une erreur
+ECRIRE "C = Cos(Sin(A)) = ", C
+
+FIN
+
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+
+function Exo_9_1_js() {
+
+	var a = 1;
+	var b = 2;
+	var c = 3;
+	var d;
+
+	a = Math.sin(b);
+	alert("a = sin(b) = " + a);  // OK //
+	a = Math.sin(a+b*c);
+	alert("a = sin(a+b*c) = " + Math.sin(a+b*c)); // OK //
+	b = Math.sin(a)- Math.sin(d);
+	alert("b = sin(a) - sin(d) = " + b); // d est une chaîne de caractère donc ça marche pas //
+	b=2; // si on remet pas b à 2, la prochaine équation c provoquera une erreur //
+	c = Math.sin(a/b); // à vérifier que b ne soit pas repris du résultat de l'opération précédente avec d la maudite variable en String //
+	alert("c = sin(a/b) = " + Math.sin(a/b)); // si b est différent de zéro tout marche sur des roulettes //
+	c = Math.cos(Math.sin(a));
+	alert("c = cos(sin(a) = " + c); // l'absence de parenthèse fermante à cos(sin(a) provoque une erreur //
+
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_9_1_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+
+      <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+< ? php
+
+$a = 1;
+$b = 2;
+$c = 3;
+$d;
+
+$sina = sin($b); // OK //
+$sina2 = sin($a+$b*$c); // OK //
+$b1 = sin($a)- sin($d); // d est une chaîne de caractère donc ça marche pas" //
+$c1 = sin($a/$b); // à vérifier que b ne soit pas repris du résultat de l'opération précédente avec d la maudite variable en String //
+ // si b est différent de zéro tout marche sur des roulettes //
+$c2 = cos(sin($a)); // l'absence de parenthèse fermante à cos(sin(a) provoque une erreur"
+
+$sMessage = "a = sin(b) = " . $sina . "</ br> </ br>" . "a = sin(a+b*c) = " . $sina2 ."</ br> </ br>" . "b = sin(a) - sin(d) = " . $b1 ."</ br> </ br >". "c = sin(a/b) = " . $c1 ."</ br> </ br>". "c = cos(sin(a) = " .  $c2;
+
+require "exo_9_1.html";
+
+	require "exo_9_1.html";
+
+? >
+
+
+
+
+
+				</textarea>
+ <form name="myExoForm" id="myExoForm" method="POST" action="exo_9_1.php">
+
+			<div class="center" style="margin-left:-100px;">
+            <div class="message">
+
+
+                <h1>le tableau</h1>
+
+
+            </div>
+			</div>
+
+			<button type="submit" style="margin-left:720px;">php</button>
+
+			<div class="center" style="margin-left:-100px;">
+            <h1><span> <?= $sMessage; ?>  </span></h1>
+			</div>
+
+
+
+
+            </form>
+			    </div>
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 10.4</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 10.4">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="../css/algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+<script>
+function Exo_10_4_js() {
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+
+var Nouveau.Nom = prompt("Entrez le nom : ");
+var Nouveau.Prénom = prompt("Entrez le prénom : ");
+var Nouveau.Tel = prompt("Entrez le téléphone : "); 
+var Nouveau.Mail = prompt("Entrez le mail : ");
+	
+window.open("Adresse.txt", 1);
+var i = -1;
+var insert = false;
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Insert = true;
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes[i] = MonPote;
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+for(j=0; j<=i; j++) {
+  EcrireFichier 1, MesPotes[j];
+  }
+close(1);
+	
+
+
+}	    				
+</script>
+
+<script>
+function Exo_10_4_jquery()
+{
+
+	var x = [1,2];
+	var i, j;
+	var val=1;
+	
+	for(i=0; i<=1; i++) {
+		for(j=0; j<=2; j++) {
+			x = [i,j];
+			x = val;
+			val = val + 1;
+		}
+	}
+	
+	for(j=0; j<=2; j++) {
+		for(i=0; i<=1; i++) {
+			x = [i,j];
+			alert(x);
+		}
+	}
+				
+	
+}
+
+
+
+
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center">
+            <h1>Mon super exo 10.4</h1>
+			</div>
+<div class="center">
+			<h1 style="width:540px; height:90px;">
+Même question, mais cette fois le carnet est supposé<br> être trié par ordre alphabétique. L’individu doit donc<br> être inséré au bon endroit dans le fichier.
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:100px;" class="center">
+                <h1>PSEUDO-CODE</h1>
+                <textarea>
+   
+
+
+Algorithme_Exercice_10_4
+
+Variables nom, prenom, tel, mail, lig en String
+
+Structure Bottin
+  Nom en Caractère * 20
+  Prénom en Caractère * 15
+  Tel en Caractère * 10
+  Mail en Caractère * 20
+Fin Structure
+Tableau Mespotes() en Bottin
+Variables MonPote, Nouveau en Bottin
+Variables i, j en Numérique
+Debut
+Ecrire "Entrez le nom : "
+Lire Nouveau.Nom
+Ecrire "Entrez le prénom : "
+Lire Nouveau.Prénom
+Ecrire "Entrez le téléphone : "
+Lire Nouveau.Tel
+Ecrire "Entrez le mail : "
+Lire Nouveau.Mail
+	
+Ouvrir "Adresse.txt" sur 1 pour Lecture
+i ← -1
+inséré ← Faux
+Tantque Non EOF(1)
+  i ← i + 1
+  Redim MesPotes(i)
+  LireFichier 1, MonPote
+  Si MonPote.Nom > Nouveau.Nom et Non Inséré Alors
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+    i ← i + 1
+    Redim MesPotes(i)
+  FinSi
+  MesPotes(i) ← MonPote
+FinTantQue
+Fermer 1
+Si Non Inséré Alors
+    i ← i + 1
+    Redim MesPotes(i)
+    MesPotes(i) ← Nouveau
+    Inséré ← Vrai
+FinSi
+
+Ouvrir "quot;Adresse.txt" sur 1 pour Ecriture
+Pour j ← 0 à i
+  EcrireFichier 1, MesPotes(j)
+j suivant
+Fermer 1
+Fin	
+
+Fin
+	
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1>JavaScript</h1>
+                <textarea>
+				
+			
+function Exo_10_4_js() {
+
+
+	
+
+				
+	
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_4_js()">Tester mon JS</button>
+                </div>
+
+            </div>
+            <div id="div_jquery" class="center">
+                <h1>JQuery</h1>
+                <textarea>
+
+function Exo_10_4_jquery() {
+
+	
+
+
+
+	
+	
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_10_4_jquery();">Tester mon JQuery</button>
+                    
+                </div>
+            </div>
+      <div id="div_php" class="center">
+                <h1>PHP</h1>
+                <textarea>
+
+< ? php 
+
+// ALGORITHME Exo_10_4
+// On récupère les données
+
+$sNom= str_pad($_POST["sNom"], 20, " ");
+$sPrenom= str_pad($_POST["sPrenom"], 20, " ");
+$sTel= str_pad($_POST["sTel"], 10, " ");
+$sMail= str_pad($_POST["sMail"], 20, " ");
+
+// Lire mon carnet pour :
+//				- récupérer son contenu
+//				- regarder où insérer mes nouvelles données
+//				- Raison : ordre alphabétique
+
+$i= 0;
+$bDone= 0;
+$aOfMesPersonnes= [];
+/*Ouverture du fichier en lecture seule*/
+// Ouvrir "Carnet.txt" sur 19 pour Lecture
+$handle = fopen('Carnet.txt', 'r');
+/*Si on a réussi à ouvrir le fichier*/
+if ($handle)
+{
+	/*Tant que l'on est pas à la fin du fichier*/
+	// TantQue non EOF (19)
+	while (!feof($handle))
+	{
+		/*On lit la ligne courante*/
+		// LireFichier 19, ligne_personne
+		$buffer = fgets($handle);
+		$sNom_file= substr($buffer, 0, 20);
+		$sPrenom_file= substr($buffer, 20, 20);
+		$sTel_file= substr($buffer, 40, 10);
+		$sMail_file= substr($buffer, 50, 20);
+		// Dois je insérer ici ?
+		// SI (fonction_minuscule_sans_accent(saisiepersonne.sNom) < fonction_minuscule_sans_accent(ligne_personne.sNom)) ET (bDone == 0) ALORS
+		if ((strtolower($sNom) < strtolower($sNom_file)) && ($bDone == 0))	{
+			// Mespersonnes(i)= saisiepersonne
+			$aOfMesPersonnes[$i]["sNom"]= $sNom;
+			$aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+			$aOfMesPersonnes[$i]["sTel"]= $sTel;
+			$aOfMesPersonnes[$i]["sMail"]= $sMail;
+			$i++;
+			$bDone= 1;
+		}
+		// Mespersonnes(i)= ligne_personne
+		$aOfMesPersonnes[$i]["sNom"]= $sNom_file;
+		$aOfMesPersonnes[$i]["sPrenom"]= $sPrenom_file;
+		$aOfMesPersonnes[$i]["sTel"]= $sTel_file;
+		$aOfMesPersonnes[$i]["sMail"]= $sMail_file;
+		$i++;
+	}
+	/*On ferme le fichier*/
+	fclose($handle);
+}
+// enlever l'indice de crée :
+$i--;
+
+// dans le cas où je n'ai pas pu insérer (dernier elément du carnet)
+// SI (bDone == 0) ALORS
+if ($bDone == 0)	{
+	// Redim Mespersonnes(i)
+	// Mespersonnes(i)= saisiepersonne
+	$i++;
+	$aOfMesPersonnes[$i]["sNom"]= $sNom;
+	$aOfMesPersonnes[$i]["sPrenom"]= $sPrenom;
+	$aOfMesPersonnes[$i]["sTel"]= $sTel;
+	$aOfMesPersonnes[$i]["sMail"]= $sMail;
+	$bDone= 1;
+}
+
+// Ecrire mon nouveau contenu dans carnet
+// Ouvrir "Carnet.txt" sur 19 pour Ecriture
+$sTextFinal= "";
+for ($i= 0; $i<count($aOfMesPersonnes); $i++)	{
+	$sTextFinal.= $aOfMesPersonnes[$i]["sNom"] . $aOfMesPersonnes[$i]["sPrenom"] . $aOfMesPersonnes[$i]["sTel"] . $aOfMesPersonnes[$i]["sMail"] . "\n";
+}
+
+$handle = fopen('Carnet.txt', 'r');
+if ($handle)	{
+	fputs($handle, $sTextFinal);
+	fclose($handle);
+}
+
+echo $sTextFinal;
+
+require "exo_10_4.html";
+
+? >
+				
+				
+				
+				
+				
+				</textarea>
+
+
+			
+			
+		<form name="myExoForm" id="myExoForm" method="POST" action="Exo_10_4.php">
+        <div id="form_PHP">
+            <!---->
+			<div class="center" style="margin-left:-100px;">
+            <h1><span><?= $sTextFinal; ?></span></h1>
+			</div>
+            <!----> <br><br>
+            <br><label>Nom : <input type="text" name="sNom" id="sNom" value=""><br/></label>
+            <label>Prénom : <input type="text" name="sPrenom" id="sPrenom" value=""><br/></label>
+            <label>Téléphone : <input type="text" name="sTel" id="sTel" value=""><br/></label>
+            <label>Mail : <input type="text" name="sMail" id="sMail" value=""><br/></label>
+            
+            <!---->
+            <button type="submit">php</button><br/>
+        </div>
+    </form>
+			    </div>
+				
+	
+				Tableau print_r = <?php print_r($aZero); ?>
+			<hr>
+			Tableau var_dump = <?php var_dump($aZero); ?>
+			<hr>
+			<?php
+				for($i = 0; $i <= 6; $i++) {
+					echo $i . ") " . $aZero[$i] . "<br>";
+				}
+			?>
+
+        </section>
+
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

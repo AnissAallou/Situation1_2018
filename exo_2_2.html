@@ -1,0 +1,151 @@
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 2.2</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 2.2">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+
+</head>
+
+<body>
+
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+function Exo_2_2_js() {
+
+    var nombre, carre;
+
+    nombre = prompt("Veuillez taper un nombre et nous afficherons le carre ");
+
+    carre = nombre * nombre;
+
+    alert(carre);
+
+}
+</script>
+
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 2.2</h1>
+		</div>
+										<div class="center" style="margin-left:-200px;">
+			<h1 style="width:700px; height:65px;">Énoncé : Ecrire un programme qui demande un nombre à l’utilisateur, puis qui calcule et affiche le carré de ce nombre.</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:150px;" class="center">
+                <h1 style="margin-left:550px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_exercice_2_2
+
+Variables nombre, carre en Numérique
+
+
+DEBUT
+
+	ECRIRE "Veuillez ecrire un nombre, nous le calculerons et nous afficherons le carré de ce nombre"
+	LIRE nombre
+
+	carre <-  nombre * nombre
+
+	ECRIRE "son carré est : ", carre
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:550px;">JavaScript</h1>
+                <textarea>
+
+function Exo_2_2_js() {
+
+    var nombre, carre;
+
+    nombre = prompt("Veuillez taper un nombre et nous afficherons le carre ");
+
+    carre = nombre * nombre;
+
+    alert(carre);
+
+}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_2_2_js()">Tester mon JS</button>
+                </div>
+            </div>
+
+			<div id="div_php" class="center">
+                <h1 style="margin-left:550px;">PHP</h1>
+                <textarea>
+< ? php
+
+if(isset($_POST["nombre"])) {
+	//if ($_POST["puissance"] < 4) {
+		$nombre = $_POST["nombre"];
+		//$puissance = $_POST["puissance"];//
+
+		if(isset($_POST["carre"])) {
+			$carre = $_POST["carre"];
+			//$puissance++;//
+			$carre = $nombre * $nombre;
+		} else {
+			$carre = $nombre * $nombre;
+		}
+	//}
+}
+
+require "exo_2_2.html";
+
+? >
+				</textarea>
+                <div class="div_center">
+					<form id="form_exo_php" method="POST" action="exo_2_2.php">
+						<label for="nombre" style="<?= (isset($nombre)) ? 'display : none' : ''; ?>">Entrez un nombre :</label><input type="<?= (isset($nombre)) ? 'hidden' : 'number'; ?>" name="nombre" id="nombre">
+
+						<?= (isset($carre)) ? '<label for="carre">Le carré de ' . $nombre . ' est : ' . $carre . '</label><input type="hidden" name="carre" id="carre" value="' . $carre . '">' : ""; ?>
+						<button type="submit" class="btn_green">Tester mon PHP</button>
+					</form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>

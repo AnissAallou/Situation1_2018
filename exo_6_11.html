@@ -1,0 +1,220 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+    <title>Exo 6.11</title>
+    <meta charset="utf-8">
+    <meta name="description" content="Exercice 6.11">
+    <!-- For Internet Explhorreur : to force css3 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tablettes 'n' Mobiles -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main css and js -->
+    <link type="text/css" rel="stylesheet" href="algo.css">
+
+    <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+
+    <!-- CODE JAVASCRIPT  et jQuery -->
+    <script type="text/javascript" src="../js/exercice.js"></script>
+
+<style>
+	table
+{
+    border-collapse: collapse; /* Les bordures du tableau seront collées (plus joli) */
+}
+td
+{
+    border: 1px solid cyan;
+}
+</style>
+</head>
+
+<body>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='deconnexion.php'">Déconnexion</button>
+		</div>
+		</br>
+		</br>
+		<div class="center">
+				<button class="btn_green" onclick="self.location.href='exos.html'">Retour</button>
+		</div>
+
+<script>
+function Exo_6_11_js() {
+
+
+	var tabA = [4,8,7,12];
+	var tabB = [3,6];
+	var i;
+	var j;
+	var S = 0;
+
+
+
+	for(i=0; i<=3; i++) {
+		for(j=0; j<=1; j++) {
+			S = S + tabA[i] * tabB[j];
+		}
+	}
+
+
+
+	alert("Toon : " + S.toString());
+
+
+
+
+}
+</script>
+
+    <div id="page">
+        <!-- Entête de la zone considérée -->
+        <header>
+		<div class="center" style="margin-left:-200px;">
+            <h1>Mon super exo 6.11</h1>
+		</div>
+			<div class="center" style="margin-left:-200px;">
+			<h1 style="width:600px; height:390px;">Toujours à partir de deux tableaux précédemment saisis, écrivez un algorithme qui calcule le « Toon » des
+			deux<br> tableaux. Pour calculer le « Toon », il faut multiplier<br> chaque élément du tableau 1 par chaque élément du tableau 2, et additionner le tout. Par exemple si l'on a :<br><br>
+<table>
+<tr>
+	<td style="border:none;">Tableau 1 : </td>
+	<td>4</td>
+	<td>8</td>
+	<td>7</td>
+	<td>12</td>
+</tr>
+</table>
+<br>
+<table>
+<tr>
+	<td style="border:none;">Tableau 2 : </td>
+	<td>3</td>
+	<td>6</td>
+</tr>
+</table>
+<br>
+Le « Toon » sera :<br>
+3 * 4 + 3 * 8 + 3 * 7 + 3 * 12 + 6 * 4 + 6 * 8 + 6 * 7 + 6 * 12 = 279
+</h1>
+		</div>
+        </header>
+
+        <!-- Nav. principale de la page -->
+        <nav></nav>
+
+        <!-- Les à-cotés de la page -->
+        <aside></aside>
+
+        <!-- Contenu textuel de la page -->
+        <section>
+            <div id="div_pseudo_code" style="margin-top:400px;" class="center">
+                <h1 style="margin-left:500px;">PSEUDO-CODE</h1>
+                <textarea>
+
+Algorithme_Exercice_6_11
+
+Variables i, j, S, tabA, tabB numérique
+
+DEBUT
+
+
+	REDIM tabA(n-1)
+	tabA = [4,8,7,12]
+
+	REDIM tabB(n-1)
+	tabB = [3,6]
+	S = 0
+
+
+
+	POUR i de 0 à 3
+		POUR j de 0 à 1
+			S = S + tabA(i) * tabB(j)
+		j Suivant
+	i Suivant
+
+
+
+	ECRIRE "Toon : ", S
+
+
+
+FIN
+				</textarea>
+            </div>
+            <div id="div_javascript" class="center">
+                <h1 style="margin-left:500px;">JavaScript</h1>
+                <textarea>
+
+function Exo_6_11_js() {
+
+
+
+	var tabA = [4,8,7,12];
+	var tabB = [3,6];
+	var i;
+	var j;
+	var S = 0;
+
+
+
+	for(i=0; i<=3; i++) {
+		for(j=0; j<=1; j++) {
+			S = S + tabA[i] * tabB[j];
+		}
+	}
+
+
+
+	alert("Toon : " + S.toString());
+
+
+	}
+				</textarea>
+                <div class="div_center">
+                    <button class="btn_green" onClick="Exo_6_11_js()">Tester mon JS</button>
+                </div>
+            </div>
+            <div id="div_php" class="center">
+                <h1 style="margin-left:500px;">PHP</h1>
+                <textarea>
+
+function Exo_6_11_jquery() {
+
+
+	var tabA = [4,8,7,12];
+	var tabB = [3,6];
+	var i;
+	var j;
+	var S = 0;
+
+
+
+	for(i=0; i<=3; i++) {
+		for(j=0; j<=1; j++) {
+			S = S + tabA[i] * tabB[j];
+		}
+	}
+
+
+
+	alert("Toon : " + S.toString());
+
+
+
+}
+				</textarea>
+				<form id="form_exo_php" method="POST" action="exo_6_11.php">
+					<h1 style="margin-left:500px;"><?= $sMessage; ?></h1>
+					<button type="submit" style="margin-left: 625px;">PHP</button>
+				</form>
+            </div>
+        </section>
+
+        <!-- Pied-de-page de la page -->
+        <footer></footer>
+    </div>
+
+</body>
+</html>
